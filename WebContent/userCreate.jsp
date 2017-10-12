@@ -59,6 +59,9 @@
 		}
 	</style>
 </head>
+<header>
+  <s:include value="header.jsp" />
+</header>
 <body>
 	<div id="header">
 	 	<div id="pr">
