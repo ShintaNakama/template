@@ -13,8 +13,8 @@
     <s:include value="header.jsp" />
   </header>
     <h1>インターノウスフットコート</h1>
-    <div id="top_image">
-      <img src="./img/fut02.jpg" >
+    <div class="main_container">
+      <img class="top_image" src="./img/fut02.jpg" >
     </div>
   <footer>
 

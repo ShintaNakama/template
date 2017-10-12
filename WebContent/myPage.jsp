@@ -68,6 +68,7 @@
 	<div id="header">
 	 	<div id="pr">
 		</div>
+		<s:include value="header.jsp" />
 	</div>
 	<div id="main">
 		<div id="top">
