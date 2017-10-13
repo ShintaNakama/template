@@ -38,6 +38,7 @@ public class LoginDAO {
 				loginDTO.setLoginId(resultSet.getString("login_id"));
 				loginDTO.setLoginPassword(resultSet.getString("login_pass"));
 				loginDTO.setUserName(resultSet.getString("user_name"));
+				loginDTO.setLoginFlg(resultSet.getBoolean("login_flg"));
 
 				if(!(resultSet.getString("login_id").equals(null))) {
 					loginDTO.setLoginFlg(true);
@@ -59,20 +60,20 @@ public class LoginDAO {
 		String sql = "UPDATE login_user_transaction SET login_flg=? where login_id=?";
 		try {
 			PreparedStatement ps = connection.prepareStatement(sql);
-			
+
 			ps.setBoolean(1, loginFlg);
 			ps.setString(2, loginUserId);
-			
+
 			count = ps.executeUpdate();
-			
+
 			return count;
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			connection.close();
 		}
-		
+
 		return count;
 	}
 	public LoginDTO getLoginDTO() {

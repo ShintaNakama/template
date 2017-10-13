@@ -65,14 +65,11 @@
 		}
 	</style>
 </head>
-<header>
-  <s:include value="header.jsp" />
-</header>
+
 <body>
-	<div id="header">
-	 	<div id="pr">
-		</div>
-	</div>
+  <header>
+    <s:include value="header.jsp" />
+  </header>
 	<div id="main">
 		<div id="top">
 			<p>Login</p>

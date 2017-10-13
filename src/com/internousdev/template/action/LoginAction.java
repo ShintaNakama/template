@@ -74,7 +74,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		// ログイン情報を比較
 		if(((LoginDTO) loginUserInfoMap.get("loginUser")).getLoginFlg()) {
 			result = SUCCESS;
-
+			loginUserInfoMap.put("loginFlg",loginDTO.getLoginFlg());
+			System.out.println("aaa"+loginUserInfoMap.get("loginFlg"));
 			// アイテム情報を取得
 			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
 			loginUserInfoMap.put("login_user_id",	loginDTO.getLoginId());

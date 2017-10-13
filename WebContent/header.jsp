@@ -10,10 +10,10 @@
 </head>
 <body>
 <!-- ログイン時 -->
-  <s:if test="#session.userId !=null && #session.loginFlg !=0">
+  <s:if test="#session.loginFlg !=null">
     <ul class="manu">
-      <li><a href="">トップ</a></li>
-      <li><a href="">コート詳細</a></li>
+      <li><a href='<s:url action="GoTopAction" />'>トップ</a></li>
+      <li><a href="cortInfo.jsp">コート詳細</a></li>
       <li><a href='<s:url action="UserCreateAction" />'>新規ユーザ登録</a></li>
       <li><a href='<s:url action="LogoutAction" />'>ログアウト</a></li>
     </ul>
@@ -21,8 +21,8 @@
 <!-- 未ログイン時 -->
   <s:else>
     <ul class="manu">
-      <li><a href="">トップ</a></li>
-      <li><a href="">コート詳細</a></li>
+      <li><a href='<s:url action="GoTopAction" />'>トップ</a></li>
+      <li><a href="cortInfo.jsp">コート詳細</a></li>
       <li><a href='<s:url action="LoginAction" />'>ログイン</a></li>
       <li><a href='<s:url action="UserCreateAction" />'>新規ユーザ登録</a></li>
     </ul>
