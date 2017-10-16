@@ -47,9 +47,51 @@
       <tr>
         <th>カード番号</th>
         <!-- カード番号を入力 -->
-
+        <td>
+        <input type="number" name="cardNumber" size="30" pattern="[0-9]{16}" maxlength="16" title="数字のみ16桁を入力してください。" placeholder="カード番号を入力してください" required />
+        </td>
+      </tr>
+      <tr>
+        <th>有効期限</th>
+        <!-- 有効期限を選択 -->
+        <td>
+        <select name="cardMonth" required>
+          <option value=""></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <select name="cardYear" required>
+          <option value=""></option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+        </select>
+        </td>
+      </tr>
+      <tr>
+        <th>セキュリティコード</th>
+        <!-- セキュリティコード入力 -->
+        <td>
+        <input type="password" name="securityCode" size="30" maxlength="4" pattern="[0-9]{3,4}" title="数字のみ3桁または4桁を入力してください。" placeholder="セキュリティコードを入力してください" required />
+        </td>
       </tr>
     </table>
+    <p align="center" class="pinput">
+      <input type="submit" name="btn1" value="ReservationConfirm" class="button4" />
+    </p>
   </form>
 </body>
 </html>
