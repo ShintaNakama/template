@@ -23,7 +23,8 @@ phone_number varchar(30),
 email varchar(30),
 reservation_date timestamp default 0,
 reservation_dayofweek int(5),
-reservation_time int(5),
+reservation_start int(5),
+reservation_end int(5),
 update_date timestamp default current_timestamp on update current_timestamp,
 delete_date timestamp
 );

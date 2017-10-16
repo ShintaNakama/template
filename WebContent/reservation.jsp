@@ -12,7 +12,23 @@
 <title>reservationPage</title>
 </head>
 <body>
-   <s:include value="header.jsp" />
+  <div class="firstHeader">
+    <s:include value="header.jsp" />
+  </div>
+  <form action="ReservationInputAction">
+    <table>
+      <th>予約日</th>
+        <td><input type="date" name="reservationDate" required style="color:black;width:10em;font-family:sans-serif;text-align:center; "value=" "></td>
+      <th>予約開始時間</th>
+        <td><input type="time" name="reservationStart" min="08:00" max="21:00" required></td>
+      <th>終了時間</th>
+        <td><input type="time" name="reservationeEnd" min="09:00" max="22:00" required></td>
+      <th>予約者・団体名</th>
+        <td><input type="text" nema="reservationName" required></td>
+    </table>
+
+    <button value="ReservationInputAction" class="reservationButton">予約</button>
+  </form>
 <div class="cd-schedule loading">
 	<div class="timeline">
 		<ul><li><span>08:00</span></li>
@@ -50,146 +66,86 @@
 	<div class="events">
 		<ul>
 			<li class="events-group">
+			    <div class="date"><s:property value="#session.reservationDate"/></div>
 				<div class="top-info"><span>Monday</span></div>
 
 				<ul>
-					<li class="single-event" data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1">
+					<li class="single-event" data-start="09:30" data-end="10:30" data-content="event-test1" data-event="event-1">
 						<a href="#0">
-							<em class="event-name">Abs Circuit</em>
+							<em class="event-name">test 1</em>
 						</a>
 					</li>
 
-					<li class="single-event" data-start="11:00" data-end="12:30" data-content="event-rowing-workout" data-event="event-2">
+					<li class="single-event" data-start="11:00" data-end="12:30" data-content="event-test2" data-event="event-2">
 						<a href="#0">
-							<em class="event-name">Rowing Workout</em>
+							<em class="event-name">test 2</em>
 						</a>
 					</li>
 
-					<li class="single-event" data-start="14:00" data-end="15:15"  data-content="event-yoga-1" data-event="event-3">
+					<li class="single-event" data-start="14:00" data-end="15:15"  data-content="event-test3" data-event="event-3">
 						<a href="#0">
-							<em class="event-name">Yoga Level 1</em>
+							<em class="event-name">test 3</em>
 						</a>
+					</li>
+					<li class="single-event" data-start="<s:property value="#session.reservationStart"/>" data-end="<s:property value="#session.reservationEnd"/>"  data-content="" data-event="event-1">
+
+							<em class="event-name"><s:property value="#session.reservationName"/></em>
+
 					</li>
 				</ul>
 			</li>
 
 			<li class="events-group">
 				<div class="top-info"><span>Tuesday</span></div>
-
-				<ul>
-					<li class="single-event" data-start="10:00" data-end="11:00"  data-content="event-rowing-workout" data-event="event-2">
-						<a href="#0">
-							<em class="event-name">Rowing Workout</em>
-						</a>
-					</li>
-
-					<li class="single-event" data-start="11:30" data-end="13:00"  data-content="event-restorative-yoga" data-event="event-4">
-						<a href="#0">
-							<em class="event-name">Restorative Yoga</em>
-						</a>
-					</li>
-
-					<li class="single-event" data-start="13:30" data-end="15:00" data-content="event-abs-circuit" data-event="event-1">
-						<a href="#0">
-							<em class="event-name">Abs Circuit</em>
-						</a>
-					</li>
-
-					<li class="single-event" data-start="15:45" data-end="16:45"  data-content="event-yoga-1" data-event="event-3">
-						<a href="#0">
-							<em class="event-name">Yoga Level 1</em>
-						</a>
-					</li>
-				</ul>
+                <ul>
+                    <li>
+                    </li>
+                </ul>
 			</li>
 
 			<li class="events-group">
 				<div class="top-info"><span>Wednesday</span></div>
-
-				<ul>
-					<li class="single-event" data-start="09:00" data-end="10:15" data-content="event-restorative-yoga" data-event="event-4">
-						<a href="#0">
-							<em class="event-name">Restorative Yoga</em>
-						</a>
-					</li>
-
-					<li class="single-event" data-start="10:45" data-end="11:45" data-content="event-yoga-1" data-event="event-3">
-						<a href="#0">
-							<em class="event-name">Yoga Level 1</em>
-						</a>
-					</li>
-
-					<li class="single-event" data-start="12:00" data-end="13:45"  data-content="event-rowing-workout" data-event="event-2">
-						<a href="#0">
-							<em class="event-name">Rowing Workout</em>
-						</a>
-					</li>
-
-					<li class="single-event" data-start="13:45" data-end="15:00" data-content="event-yoga-1" data-event="event-3">
-						<a href="#0">
-							<em class="event-name">Yoga Level 1</em>
-						</a>
-					</li>
-				</ul>
+                <ul>
+                    <li>
+                    </li>
+                </ul>
 			</li>
 
 			<li class="events-group">
 				<div class="top-info"><span>Thursday</span></div>
-
-				<ul>
-					<li class="single-event" data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1">
-						<a href="#0">
-							<em class="event-name">Abs Circuit</em>
-						</a>
-					</li>
-
-					<li class="single-event" data-start="12:00" data-end="13:45" data-content="event-restorative-yoga" data-event="event-4">
-						<a href="#0">
-							<em class="event-name">Restorative Yoga</em>
-						</a>
-					</li>
-
-					<li class="single-event" data-start="15:30" data-end="16:30" data-content="event-abs-circuit" data-event="event-1">
-						<a href="#0">
-							<em class="event-name">Abs Circuit</em>
-						</a>
-					</li>
-
-					<li class="single-event" data-start="17:00" data-end="18:30"  data-content="event-rowing-workout" data-event="event-2">
-						<a href="#0">
-							<em class="event-name">Rowing Workout</em>
-						</a>
-					</li>
-				</ul>
+                <ul>
+                    <li>
+                    </li>
+                </ul>
 			</li>
 
 			<li class="events-group">
 				<div class="top-info"><span>Friday</span></div>
+                <ul>
+                    <li>
+                    </li>
+                </ul>
+			</li>
 
-				<ul>
-					<li class="single-event" data-start="10:00" data-end="11:00"  data-content="event-rowing-workout" data-event="event-2">
-						<a href="#0">
-							<em class="event-name">Rowing Workout</em>
-						</a>
-					</li>
+			<li class="events-group">
+				<div class="top-info"><span>Saturday</span></div>
+                <ul>
+                    <li>
+                    </li>
+                </ul>
+			</li>
 
-					<li class="single-event" data-start="12:30" data-end="14:00" data-content="event-abs-circuit" data-event="event-1">
-						<a href="#0">
-							<em class="event-name">Abs Circuit</em>
-						</a>
-					</li>
-
-					<li class="single-event" data-start="15:45" data-end="16:45"  data-content="event-yoga-1" data-event="event-3">
-						<a href="#0">
-							<em class="event-name">Yoga Level 1</em>
-						</a>
-					</li>
-				</ul>
+			<li class="events-group">
+				<div class="top-info"><span>Sunday</span></div>
+                <ul>
+                    <li>
+                    </li>
+                </ul>
 			</li>
 		</ul>
 	</div>
 
-	<div class="event-modal">
+<div class="event-modal">
 	 	<header class="header">
 			<div class="content">
 				<span class="event-date"></span>

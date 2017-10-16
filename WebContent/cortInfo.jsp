@@ -32,7 +32,7 @@
 	</tr>
 </table>
   <h1>ご予約、コート空き情報の確認はこちらから</h1>
-	<input type="button" value="予約" onclick="">
+	<a href="reservation.jsp">予約ページ</a>
 
 
 	<!-- <hr size="2" color="#000000"> -->
