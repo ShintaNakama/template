@@ -69,7 +69,7 @@
 
         <!-- ReservationInputAction -->
         <action name="ReservationInputAction" class="com.internousdev.template.action.ReservationInputAction" method="execute">
-            <result name="success">reservation.jsp</result>
+            <result name="success">settlement.jsp</result>
             <result name="error">error.jsp</result>
         </action>
 

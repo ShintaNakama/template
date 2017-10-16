@@ -15,10 +15,10 @@
   <div class="firstHeader">
     <s:include value="header.jsp" />
   </div>
-  <form action="ReservationInputAction">
+  <s:form action="ReservationInputAction">
     <table>
       <th>予約日</th>
-        <td><input type="date" name="reservationDate" required style="color:black;width:10em;font-family:sans-serif;text-align:center; "value=" "></td>
+        <td><input type="date" name="reservationDate" required style="color:black;width:12em;font-family:sans-serif;text-align:center; "value=" "></td>
       <th>予約開始時間</th>
         <td><input type="time" name="reservationStart" min="08:00" max="21:00" required></td>
       <th>終了時間</th>
@@ -28,7 +28,7 @@
     </table>
 
     <button value="ReservationInputAction" class="reservationButton">予約</button>
-  </form>
+  </s:form>
 <div class="cd-schedule loading">
 	<div class="timeline">
 		<ul><li><span>08:00</span></li>

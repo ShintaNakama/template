@@ -4,6 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- フォントの読み込み -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300'
+	rel='stylesheet' type='text/css'>
+<!-- jQueryの読み込み -->
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>settlementPage</title>
 </head>
@@ -41,14 +47,14 @@
         <th>カード名義</th>
         <!-- カード名義を入力 -->
         <td>
-        <input type="text" name="cardHolder" size="30" maxlength-"20" pattern="^[A-Z| |]{,20}" title="大文字アルファベット20文字以内で入力してください。" placeholder="名前を入力してください" required />
+        <input type="text" name="cardHolder" size="30" maxlength="20" pattern="^[A-Z| |]{,20}" title="大文字アルファベット20文字以内で入力してください。" placeholder="名前を入力してください" required />
         </td>
       </tr>
       <tr>
         <th>カード番号</th>
         <!-- カード番号を入力 -->
         <td>
-        <input type="number" name="cardNumber" size="30" pattern="[0-9]{16}" maxlength="16" title="数字のみ16桁を入力してください。" placeholder="カード番号を入力してください" required />
+        <input type="text" name="cardNumber" size="30" pattern="[0-9]{16}" maxlength="16" title="数字のみ16桁を入力してください。" placeholder="カード番号を入力してください" required />
         </td>
       </tr>
       <tr>
@@ -90,8 +96,32 @@
       </tr>
     </table>
     <p align="center" class="pinput">
-      <input type="submit" name="btn1" value="ReservationConfirm" class="button4" />
+      <input type="submit" name="ReservationCmpBtn" value="決済内容確認画面へ" class="ReservationCmpBtn" />
     </p>
   </form>
+  <script>
+    function changeDisabled(){
+    	  //クレジットカード情報の入力可にする
+    	   if(document.settlement["pay"][1].checked){
+    		  document.settlement["card"].disabled = false;
+    		  document.settlement["cardHolder"].disabled = false;
+    		  document.settlement["cardNumber"].disabled = false;
+    		  document.settlement["cardMonth"].disabled = false;
+    		  document.settlement["cardYear"].disabled = false;
+    		  document.settlement["securityCode"].disabled = false;
+    	  }
+    	  //クレジットカード情報の入力不可にする
+    	  else{
+    		  document.settlement["card"].disabled = true;
+    		  document.settlement["cardHolder"].disabled = true;
+    		  document.settlement["cardNumber"].disabled = true;
+    		  document.settlement["cardMonth"].disabled = true;
+    		  document.settlement["cardYear"].disabled = true;
+    		  document.settlement["securityCode"].disabled = true;
+    	  }
+    }
+    //ページを表示したとき、changeDisabled()を呼び出す
+    window.onload = changeDisabled;
+  </script>
 </body>
 </html>

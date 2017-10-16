@@ -16,6 +16,10 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 public class ReservationInputAction extends ActionSupport implements SessionAware {
   /**
+	 * 生成されたシリアルコード
+	 */
+	private static final long serialVersionUID = -3801291606374757979L;
+/**
    * 予約日
    */
   private String reservationDate;
