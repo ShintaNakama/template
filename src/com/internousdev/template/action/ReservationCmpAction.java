@@ -11,6 +11,9 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.template.dao.ReservationCmpDAO;
+import com.internousdev.template.dto.BuyItemDTO;
+import com.internousdev.template.dto.LoginDTO;
+import com.internousdev.template.dto.ReservationCmpDTO;
 import com.internousdev.template.dto.ReservationDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -83,17 +86,26 @@ public class ReservationCmpAction extends ActionSupport implements SessionAware 
    */
   public ArrayList<ReservationDTO> reservationList =new ArrayList<ReservationDTO>();
   /**
+   * 処理結果を格納
+   */
+  public String result;
+  /**
+   * 予約状況取得DAO
+   */
+  public ReservationCmpDAO reservationCmpDAO = new ReservationCmpDAO();
+  /**
+   * 予約状況情報格納DTO
+   */
+  public ReservationDTO reservationDTO = new ReservationDTO();
+  /**
    * 実行メソッド
    */
-  public String execute() throws SocketException{
-	  //初期値
-	  String pay = (String) sessionMap.get("pay");
-	  String result = ERROR;
-	  int reservationTimeStamp;
-
-
-
-	  //支払い方法が選択されていない場合はエラー
+  public String execute() {
+	//初期値
+	String pay = (String) sessionMap.get("pay");
+	int reservationTimeStamp;
+	result = ERROR;
+	//支払い方法が選択されていない場合はエラー
 	  if(pay.equals(null)){
 		  return result;
 	  }
@@ -105,28 +117,21 @@ public class ReservationCmpAction extends ActionSupport implements SessionAware 
 		  cardYear = (String) sessionMap.get("CardYear");
 		  cardHolder = (String) sessionMap.get("CardHolder");
 		  securityCode = (String) sessionMap.get("SecurityCode");
-	  }
-	  reservationTimeStamp = reservationStart + reservationEnd;
-	  ReservationCmpDAO dao = new ReservationCmpDAO();
+	  }          
+      // 予約状況が被らないかチェック
+     reservationDTO = reservationCmpDAO.getReservationInfo(reservationDate, reservationStart, reservationEnd);
 
-	  boolean insertCheck = true;
-	  try{
+     reservationList.put("reservationData", reservationDTO);
 
-          if(reservationDate.equals()){
-        	  return result;
-          } else {
-        	  message = "ご指定の日時は予約できません。";
-		}
-	  } catch (SQLException e) {
-		  e.printStackTrace();
-	  }
-      if (insertCheck){
-	    result = SUCCESS;
-      } else {
-		result = ERROR;
-	}
-    return result;
-  }
+      // ログイン情報を比較
+      if(((ReservationDTO) reservationList.get("reservationData"))) {
+      result = ERROR;
+      
+      return result;
+      }
+      return result;
+      }
+   
   /**
    * セッション情報取得メソッド
    */
