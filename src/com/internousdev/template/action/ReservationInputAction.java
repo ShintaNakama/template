@@ -19,6 +19,10 @@ public class ReservationInputAction extends ActionSupport implements SessionAwar
 	 * 生成されたシリアルコード
 	 */
 	private static final long serialVersionUID = -3801291606374757979L;
+  /**
+   * 予約番号
+   */
+  //private int reservationNumber;
 /**
    * 予約日
    */
@@ -44,6 +48,10 @@ public class ReservationInputAction extends ActionSupport implements SessionAwar
    */
   public String execute(){
 	  /**
+	   * セッションに予約番号を保存する(しない）
+	   */
+	  //sessionMap.put("ReservationNumber", reservationNumber);
+	  /**
 	   * セッションに予約日を保存する
 	   */
 	  sessionMap.put("ReservationDate", reservationDate);
@@ -67,6 +75,19 @@ public class ReservationInputAction extends ActionSupport implements SessionAwar
 	  }
 	  return result;
   }
+  /**
+   * 予約番号取得メソッド
+   */
+  //public int getReservationNumber(){
+	  //return reservationNumber;
+  //}
+  /**
+   * 予約番号登録メソッド
+   * @param reservationNumber
+   */
+  //public void setReservationNumber(int reservationNumber){
+	  //this.reservationNumber = reservationNumber;
+  //}
   /**
    * 予約日取得メソッド
    */

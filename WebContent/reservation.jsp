@@ -17,6 +17,7 @@
   </div>
   <s:form action="ReservationInputAction">
     <table>
+            <!--  <input type="hidden" name="reservationNumber"> -->
       <th>予約日</th>
         <td><input type="date" name="reservationDate" required style="color:black;width:12em;font-family:sans-serif;text-align:center; "value=" "></td>
       <th>予約開始時間</th>
