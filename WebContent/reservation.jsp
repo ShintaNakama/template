@@ -12,6 +12,18 @@
 <title>reservationPage</title>
 </head>
 <body>
+  <script type="text/javascript">
+    //今日の日付データを変数nowDateに格納
+    window.onload = function(){
+    var nowDate = new Date();
+    //月、日を取得する
+    var month = nowDate.getMonth() +1;
+    var day = nowDate.getDate();
+    var yb = "日月火水木金土".charAt(nowDate.getDay());
+    //出力用
+    document.getElementById("view_time").innerHTML = month + "/" + day +"("+ yb +")";
+    }
+  </script>
   <div class="firstHeader">
     <s:include value="header.jsp" />
   </div>
@@ -68,7 +80,7 @@
 		<ul>
 			<li class="events-group">
 			    <div class="date"><s:property value="#session.reservationDate"/></div>
-				<div class="top-info"><span>Monday</span></div>
+				<div class="top-info"><span id="view_time"></span></div>
 
 				<ul>
 					<li class="single-event" data-start="09:30" data-end="10:30" data-content="event-test1" data-event="event-1">
@@ -97,7 +109,7 @@
 			</li>
 
 			<li class="events-group">
-				<div class="top-info"><span>Tuesday</span></div>
+				<div class="top-info"><span id="view_time2"></span></div>
                 <ul>
                     <li>
                     </li>
@@ -105,7 +117,7 @@
 			</li>
 
 			<li class="events-group">
-				<div class="top-info"><span>Wednesday</span></div>
+				<div class="top-info"><span id="view_time3"></span></div>
                 <ul>
                     <li>
                     </li>
@@ -113,7 +125,7 @@
 			</li>
 
 			<li class="events-group">
-				<div class="top-info"><span>Thursday</span></div>
+				<div class="top-info"><span id="view_time4"></span></div>
                 <ul>
                     <li>
                     </li>
@@ -121,7 +133,7 @@
 			</li>
 
 			<li class="events-group">
-				<div class="top-info"><span>Friday</span></div>
+				<div class="top-info"><span id="view_time5"></span></div>
                 <ul>
                     <li>
                     </li>
@@ -129,7 +141,7 @@
 			</li>
 
 			<li class="events-group">
-				<div class="top-info"><span>Saturday</span></div>
+				<div class="top-info"><span id="view_time6"></span></div>
                 <ul>
                     <li>
                     </li>
@@ -137,7 +149,7 @@
 			</li>
 
 			<li class="events-group">
-				<div class="top-info"><span>Sunday</span></div>
+				<div class="top-info"><span id="view_time7"></span></div>
                 <ul>
                     <li>
                     </li>
