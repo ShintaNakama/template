@@ -23,9 +23,9 @@
       <th>予約開始時間</th>
         <td><input type="time" name="reservationStart" min="08:00" max="21:00" required></td>
       <th>終了時間</th>
-        <td><input type="time" name="reservationeEnd" min="09:00" max="22:00" required></td>
+        <td><input type="time" name="reservationEnd" min="09:00" max="22:00" required></td>
       <th>予約者・団体名</th>
-        <td><input type="text" nema="reservationName" required></td>
+        <td><input type="text" name="reservationName" required></td>
     </table>
 
     <button value="ReservationInputAction" class="reservationButton">予約</button>

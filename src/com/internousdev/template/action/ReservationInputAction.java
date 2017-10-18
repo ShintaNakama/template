@@ -4,6 +4,9 @@
 package com.internousdev.template.action;
 
 
+import java.time.LocalTime;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -30,11 +33,11 @@ public class ReservationInputAction extends ActionSupport implements SessionAwar
   /**
    * 予約開始時間
    */
-  private int reservationStart;
+  private String reservationStart;
   /**
    * 終了時間
    */
-  private int reservationEnd;
+  private String reservationEnd;
   /**
    * 予約者・団体名
    */
@@ -68,11 +71,29 @@ public class ReservationInputAction extends ActionSupport implements SessionAwar
 	   */
 	  sessionMap.put("ReservationName", reservationName);
 
+	  Calendar cal = new GregorianCalendar();
+
+	  LocalTime startTime =  LocalTime.parse(reservationStart);
+
+	  LocalTime endTime =  LocalTime.parse(reservationEnd);
+
 	  String result = SUCCESS;
-	  //時間が不正の場合
-	  if(reservationStart >= reservationEnd){
-		  result = ERROR;
-	  }
+	  try {
+
+
+        int diff = startTime.compareTo(endTime);
+
+  	  //時間が不正の場合
+  	  if(diff == 1 ){
+  		  return ERROR;
+  	  }
+
+	} catch (Exception e) {
+		// TODO 自動生成された catch ブロック
+		e.printStackTrace();
+	}
+
+
 	  return result;
   }
   /**
@@ -103,25 +124,25 @@ public class ReservationInputAction extends ActionSupport implements SessionAwar
   /**
    * 予約開始時間取得メソッド
    */
-  public int getReservationStart(){
-	  return reservationEnd;
+  public String getReservationStart(){
+	  return reservationStart;
   }
   /**
    * 予約開始時間登録めそっだ
    */
-  public void setReservationStart(int reservationStart){
+  public void setReservationStart(String reservationStart){
 	  this.reservationStart = reservationStart;
   }
   /**
    * 予約終了時間取得メソッド
    */
-  public int getReservationEnd(){
+  public String getReservationEnd(){
 	  return reservationEnd;
   }
   /**
    * 予約終了時間登録メソッド
    */
-  public void setReservationEnd(int reservationEnd){
+  public void setReservationEnd(String reservationEnd){
 	  this.reservationEnd = reservationEnd;
   }
   /**

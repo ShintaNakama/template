@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.util.CreditCard;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -15,6 +16,10 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 public class GoToReservationCmpAction extends ActionSupport implements SessionAware {
   /**
+	 * 生成されたシリアルナンバー
+	 */
+	private static final long serialVersionUID = -2339931343794613721L;
+/**
    * 予約番号
    */
   //private int reservationNumber;
@@ -87,7 +92,7 @@ public class GoToReservationCmpAction extends ActionSupport implements SessionAw
 	  /**
 	   * セッションから予約番号を取得する
 	   */
-	  reservationNumber = (int) sessionMap.get("ReservationNumber");
+	  //reservationNumber = (int) sessionMap.get("ReservationNumber");
 	  /**
 	   * セッションから予約日を取得する
 	   */
@@ -182,11 +187,11 @@ public class GoToReservationCmpAction extends ActionSupport implements SessionAw
    */
   //public int getReservationNumber(){
 	  //return reservationNumber;
-  //}
+ // }
   /**
    * 予約番号登録メソッド
    */
-  //public void setReservationNumber(int reservationNumber){
+ // public void setReservationNumber(int reservationNumber){
 	  //this.reservationNumber = reservationNumber;
   //}
   /**

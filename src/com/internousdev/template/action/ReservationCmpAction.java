@@ -3,17 +3,10 @@
  */
 package com.internousdev.template.action;
 
-import java.net.SocketException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
 
-import org.apache.struts2.interceptor.SessionAware;
-
 import com.internousdev.template.dao.ReservationCmpDAO;
-import com.internousdev.template.dto.BuyItemDTO;
-import com.internousdev.template.dto.LoginDTO;
-import com.internousdev.template.dto.ReservationCmpDTO;
 import com.internousdev.template.dto.ReservationDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -21,8 +14,13 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author internousdev
  * 予約がかぶらないようにチェックするアクション
  */
-public class ReservationCmpAction extends ActionSupport implements SessionAware {
+public class ReservationCmpAction extends ActionSupport {
   /**
+	 *
+	 */
+	private static final long serialVersionUID = 5238438928577368989L;
+
+/**
    * セッション情報
    */
   private Map<String, Object> sessionMap;
@@ -36,7 +34,7 @@ public class ReservationCmpAction extends ActionSupport implements SessionAware 
   /**
    * 予約番号
    */
-  //private int reservationNumber;
+  private int reservationNumber;
   /**
    * 予約日
    */
@@ -103,7 +101,7 @@ public class ReservationCmpAction extends ActionSupport implements SessionAware 
   public String execute() {
 	//初期値
 	String pay = (String) sessionMap.get("pay");
-	int reservationTimeStamp;
+
 	result = ERROR;
 	//支払い方法が選択されていない場合はエラー
 	  if(pay.equals(null)){
@@ -117,21 +115,21 @@ public class ReservationCmpAction extends ActionSupport implements SessionAware 
 		  cardYear = (String) sessionMap.get("CardYear");
 		  cardHolder = (String) sessionMap.get("CardHolder");
 		  securityCode = (String) sessionMap.get("SecurityCode");
-	  }          
+	  }
       // 予約状況が被らないかチェック
-     reservationDTO = reservationCmpDAO.getReservationInfo(reservationDate, reservationStart, reservationEnd);
-
-     reservationList.put("reservationData", reservationDTO);
+     reservationDTO = reservationCmpDAO.getReservationInfo(reservationNumber, reservationDate, reservationStart, reservationEnd);
 
       // ログイン情報を比較
-      if(((ReservationDTO) reservationList.get("reservationData"))) {
-      result = ERROR;
-      
-      return result;
+      // SELECT文で値がとれば場合TRUE
+      if(reservationDTO.getIsInsertErrorFlg()) {
+          result = ERROR;
       }
+
+      // 登録用のDAOを呼び出して登録
+
       return result;
-      }
-   
+ }
+
   /**
    * セッション情報取得メソッド
    */
@@ -159,15 +157,15 @@ public class ReservationCmpAction extends ActionSupport implements SessionAware 
   /**
    * 予約番号取得メソッド
    */
-  //public int getReservationNumber(){
-	  //return reservationNumber;
-  //}
+  public int getReservationNumber(){
+	  return reservationNumber;
+  }
   /**
    * 予約番号登録メソッド
    */
-  //public void setReservationNumber(int reservationNumber){
-	 // this.reservationNumber = reservationNumber;
-  //}
+  public void setReservationNumber(int reservationNumber){
+	  this.reservationNumber = reservationNumber;
+  }
   /**
    * 予約日取得メソッド
    */
@@ -324,4 +322,6 @@ public class ReservationCmpAction extends ActionSupport implements SessionAware 
   public void setReservationList(ArrayList<ReservationDTO> reservationList){
 	  this.reservationList = reservationList;
   }
+
+
 }

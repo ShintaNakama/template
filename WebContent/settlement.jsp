@@ -15,7 +15,7 @@
 </head>
 <body>
   <h1>決済方法選択</h1>
-  <form name="settlement" action="GoToSettlementAction">
+  <form name="settlement" action="GoToReservationCmpAction">
     <table>
       <!-- 支払い方法の選択 -->
       <tr>
