@@ -5,8 +5,6 @@ package com.internousdev.template.action;
 
 
 import java.time.LocalTime;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -50,28 +48,28 @@ public class ReservationInputAction extends ActionSupport implements SessionAwar
    * 実行メソッド
    */
   public String execute(){
-	  /**
+	  /*
 	   * セッションに予約番号を保存する(しない）
 	   */
 	  //sessionMap.put("ReservationNumber", reservationNumber);
-	  /**
+	  /*
 	   * セッションに予約日を保存する
 	   */
 	  sessionMap.put("ReservationDate", reservationDate);
-	  /**
+	  /*
 	   *セッションに予約開始時間を保存する
 	   */
 	  sessionMap.put("ReservationStart", reservationStart);
-	  /**
+	  /*
 	   * セッションに予約終了時間を保存する
 	   */
 	  sessionMap.put("ReservationEnd", reservationEnd);
-	  /**
+	  /*
 	   * セッションに予約者名を保存する
 	   */
 	  sessionMap.put("ReservationName", reservationName);
 
-	  Calendar cal = new GregorianCalendar();
+
 
 	  LocalTime startTime =  LocalTime.parse(reservationStart);
 
@@ -89,7 +87,7 @@ public class ReservationInputAction extends ActionSupport implements SessionAwar
   	  }
 
 	} catch (Exception e) {
-		// TODO 自動生成された catch ブロック
+
 		e.printStackTrace();
 	}
 
@@ -160,12 +158,13 @@ public class ReservationInputAction extends ActionSupport implements SessionAwar
   /**
    * セッション情報取得メソッド
    */
-  public Map<String, Object> getSessionMap(){
-	  return sessionMap;
-  }
+  //public Map<String, Object> getSessionMap(){
+	  //return sessionMap;
+  //}
   /**
    * セッション情報登録メソッド
    */
+  @Override
   public void setSession(Map<String, Object> sessionMap){
 	  this.sessionMap = sessionMap;
   }

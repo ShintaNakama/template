@@ -30,11 +30,11 @@ public class GoToReservationCmpAction extends ActionSupport implements SessionAw
   /**
    * 予約開始時間
    */
-  private int reservationStart;
+  private String reservationStart;
   /**
    * 終了時間
    */
-  private int reservationEnd;
+  private String reservationEnd;
   /**
    * 予約者名
    */
@@ -101,12 +101,12 @@ public class GoToReservationCmpAction extends ActionSupport implements SessionAw
 	  /**
 	   * セッションから予約開始時間を取得する
 	   */
-	  reservationStart = (int) sessionMap.get("ReservationStart");
+	  reservationStart = (String) sessionMap.get("ReservationStart");
 
 	  /**
 	   * セッションから予約終了時間を取得する
 	   */
-	  reservationEnd = (int) sessionMap.get("ReservationEnd");
+	  reservationEnd = (String) sessionMap.get("ReservationEnd");
 
 	  /**
 	   * セッションから予約者名を取得する
@@ -209,25 +209,25 @@ public class GoToReservationCmpAction extends ActionSupport implements SessionAw
   /**
    * 予約開始時間取得メソッド
    */
-  public int getReservationStart(){
+  public String getReservationStart(){
 	  return reservationStart;
   }
   /**
    * 予約開始時間登録メソッド
    */
-  public void setReservationStart(int reservationStart){
+  public void setReservationStart(String reservationStart){
 	  this.reservationStart = reservationStart;
   }
   /**
    * 予約終了時間取得メソッド
    */
-  public int getReservationEnd(){
+  public String getReservationEnd(){
 	  return reservationEnd;
   }
   /**
    * 予約終了時間登録メソッド
    */
-  public void setReservationEnd(int reservationEnd){
+  public void setReservationEnd(String reservationEnd){
 	  this.reservationEnd = reservationEnd;
   }
   /**

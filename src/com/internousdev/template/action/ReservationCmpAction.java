@@ -6,15 +6,17 @@ package com.internousdev.template.action;
 import java.util.ArrayList;
 import java.util.Map;
 
+import org.apache.struts2.interceptor.SessionAware;
+
 import com.internousdev.template.dao.ReservationCmpDAO;
 import com.internousdev.template.dto.ReservationDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * @author internousdev
- * 予約がかぶらないようにチェックするアクション
+ * 予約がかぶらないようにチェックし、データベースへ登録するアクション
  */
-public class ReservationCmpAction extends ActionSupport {
+public class ReservationCmpAction extends ActionSupport implements SessionAware {
   /**
 	 *
 	 */
@@ -42,11 +44,11 @@ public class ReservationCmpAction extends ActionSupport {
   /**
    * 予約開始時間
    */
-  private int reservationStart;
+  private String reservationStart;
   /**
    * 予約終了時間
    */
-  private int reservationEnd;
+  private String reservationEnd;
   /**
    * 予約者名
    */
@@ -96,7 +98,7 @@ public class ReservationCmpAction extends ActionSupport {
    */
   public ReservationDTO reservationDTO = new ReservationDTO();
   /**
-   * 実行メソッド
+   * チェック実行メソッド
    */
   public String execute() {
 	//初期値
@@ -181,25 +183,25 @@ public class ReservationCmpAction extends ActionSupport {
   /**
    * 予約開始時間取得メソッド
    */
-  public int getReservationStart(){
+  public String getReservationStart(){
 	  return reservationStart;
   }
   /**
    * 予約開始時間登録メソッド
    */
-  public void setReservationStart(int reservationStart){
+  public void setReservationStart(String reservationStart){
 	  this.reservationStart = reservationStart;
   }
   /**
    * 予約終了時間取得メソッド
    */
-  public int getReservationEnd(){
+  public String getReservationEnd(){
 	  return reservationEnd;
   }
   /**
    * 予約終了時間登録メソッド
    */
-  public void setReservationEnd(int reservationEnd){
+  public void setReservationEnd(String reservationEnd){
 	  this.reservationEnd = reservationEnd;
   }
   /**
@@ -322,6 +324,12 @@ public class ReservationCmpAction extends ActionSupport {
   public void setReservationList(ArrayList<ReservationDTO> reservationList){
 	  this.reservationList = reservationList;
   }
-
+  /**
+   * セッション情報登録メソッド
+   */
+  @Override
+  public void setSession(Map<String, Object> sessionMap){
+ 	 this.sessionMap = sessionMap;
+  }
 
 }

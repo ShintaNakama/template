@@ -3,6 +3,7 @@ package com.internousdev.template.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import com.internousdev.template.dto.ReservationDTO;
 import com.internousdev.template.util.DBConnector;
@@ -19,7 +20,7 @@ public class ReservationCmpDAO {
 	 * もしデータがなければ登録でき
 	 * データがあるならば登録できない
 	 */
-	public ReservationDTO getReservationInfo(int reservationNumber, String reservationDate, int reservationStart, int reservationEnd){
+	public ReservationDTO getReservationInfo(int reservationNumber, String reservationDate, String reservationStart, String reservationEnd){
 		String sql = "SELECT * FROM reservation_info where reservation_date = ? AND reservation_start = ? AND reservation_end = ?";
 
 		// SELECT文発行
@@ -28,16 +29,16 @@ public class ReservationCmpDAO {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1, reservationNumber);
 			preparedStatement.setString(2, reservationDate);
-			preparedStatement.setInt(3, reservationStart);
-			preparedStatement.setInt(4, reservationEnd);
+			preparedStatement.setString(3, reservationStart);
+			preparedStatement.setString(4, reservationEnd);
 
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			while(resultSet.next()){
 				reservationDTO.setReservationNumber(resultSet.getInt("reservationNumber"));
 				reservationDTO.setReservationDate(resultSet.getString("reservationDate"));
-				reservationDTO.setReservationStart(resultSet.getInt("reservationStart"));
-				reservationDTO.setReservationEnd(resultSet.getInt("reservationEnd"));
+				reservationDTO.setReservationStart(resultSet.getString("reservationStart"));
+				reservationDTO.setReservationEnd(resultSet.getString("reservationEnd"));
 
 			}
 
@@ -51,5 +52,22 @@ public class ReservationCmpDAO {
 			e.printStackTrace();
 		}
 		return reservationDTO;
+	}
+	private String reservationSql ="INSERT INTO reservation_info (reservationDate, reservationStart, reservationEnd, reservationName) VALUES(?, ?, ?, ?)";
+
+	public void reservationInsert(String reservationDate, String reservationStart, String reservationEnd, String reservationName) throws SQLException {
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(reservationSql);
+			preparedStatement.setString(1, reservationDate);
+			preparedStatement.setString(2, reservationStart);
+			preparedStatement.setString(3, reservationEnd);
+			preparedStatement.setString(4, reservationName);
+
+			preparedStatement.executeQuery();
+
+
+		} catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 }

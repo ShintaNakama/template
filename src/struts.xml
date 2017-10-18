@@ -79,6 +79,11 @@
             <result name="error">error.jsp</result>
         </action>
 
+        <!-- ReservationCmpAction -->
+        <action name="ReservationCmpAction" class="com.internousdev.template.action.ReservationCmpAction" method="execute">
+            <result name="success">reservationCmp.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
 		<!-- LogoutAction -->
 		<action name="LogoutAction" class="com.internousdev.template.action.LogoutAction" method="execute">
 			<result name="success">login.jsp</result>

@@ -16,11 +16,11 @@ public class ReservationDTO {
     /**
      * 予約開始時間
      */
-	private int reservationStart;
+	private String reservationStart;
     /**
      * 予約終了時間
      */
-	private int reservationEnd;
+	private String reservationEnd;
 	/**
 	 * 予約者名
 	 */
@@ -126,19 +126,19 @@ public class ReservationDTO {
 		this.reservationDate = reservationDate;
 	}
 
-	public int getReservationStart() {
+	public String getReservationStart() {
 		return reservationStart;
 	}
 
-	public void setReservationStart(int reservationStart) {
+	public void setReservationStart(String reservationStart) {
 		this.reservationStart = reservationStart;
 	}
 
-	public int getReservationEnd() {
+	public String getReservationEnd() {
 		return reservationEnd;
 	}
 
-	public void setReservationEnd(int reservationEnd) {
+	public void setReservationEnd(String reservationEnd) {
 		this.reservationEnd = reservationEnd;
 	}
 
