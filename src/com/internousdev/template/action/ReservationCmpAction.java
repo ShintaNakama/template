@@ -3,11 +3,13 @@
  */
 package com.internousdev.template.action;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.template.dao.InsertReservationDAO;
 import com.internousdev.template.dao.ReservationCmpDAO;
 import com.internousdev.template.dto.ReservationDTO;
 import com.opensymphony.xwork2.ActionSupport;
@@ -94,20 +96,27 @@ public class ReservationCmpAction extends ActionSupport implements SessionAware 
    */
   public ReservationCmpDAO reservationCmpDAO = new ReservationCmpDAO();
   /**
+   * 予約内容登録用DAO
+   */
+  public InsertReservationDAO insertReservationDAO = new InsertReservationDAO();
+  /**
    * 予約状況情報格納DTO
    */
   public ReservationDTO reservationDTO = new ReservationDTO();
   /**
-   * チェック実行メソッド
+   *
+   *
+   *
+   * チェック・登録実行メソッド
    */
   public String execute() {
 	//初期値
 	String pay = (String) sessionMap.get("pay");
 
-	result = ERROR;
+	result = SUCCESS;
 	//支払い方法が選択されていない場合はエラー
 	  if(pay.equals(null)){
-		  return result;
+		  result = ERROR;
 	  }
 	  //支払い方法がクレジットカードの場合
 	  if(!(pay.equals("Cash"))){
@@ -119,7 +128,7 @@ public class ReservationCmpAction extends ActionSupport implements SessionAware 
 		  securityCode = (String) sessionMap.get("SecurityCode");
 	  }
       // 予約状況が被らないかチェック
-     reservationDTO = reservationCmpDAO.getReservationInfo(reservationNumber, reservationDate, reservationStart, reservationEnd);
+     reservationDTO = reservationCmpDAO.getReservationInfo(reservationName, reservationDate, reservationStart, reservationEnd);
 
       // ログイン情報を比較
       // SELECT文で値がとれば場合TRUE
@@ -128,9 +137,20 @@ public class ReservationCmpAction extends ActionSupport implements SessionAware 
       }
 
       // 登録用のDAOを呼び出して登録
+      InsertReservationDAO dao = new InsertReservationDAO();
+      try {
+		if(dao.InsertReservation(reservationName, reservationDate, reservationStart, reservationEnd) >= 0){
+			  result = SUCCESS;
+		  } else {
+			  result = ERROR;
+		  }
+	} catch (SQLException e) {
 
+		e.printStackTrace();
+	}
       return result;
  }
+
 
   /**
    * セッション情報取得メソッド

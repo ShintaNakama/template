@@ -14,7 +14,8 @@
 
   <h1>ご予約ありがとうございます！</h1><br>
   <h1>コートでお待ちしております！</h1>
-
-  <input type="button" name="GoTop" value="トップページへ">
+  <s:form action="GoTopAction">
+  <button value="GoTopAction" class="GoTopButton">トップページへ戻る</button>
+  </s:form>
 </body>
 </html>

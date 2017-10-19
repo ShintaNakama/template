@@ -18,11 +18,7 @@ updated_date datetime
 create table reservation_info(
 reservation_number int(10) primary key auto_increment,
 reservation_name varchar(50),
-number_of_ppl int(30),
-phone_number varchar(30),
-email varchar(30),
 reservation_date timestamp default 0,
-reservation_dayofweek int(5),
 reservation_start varchar(10),/*予約開始時間*/
 reservation_end varchar(10),/*予約終了時間*/
 update_date timestamp default current_timestamp on update current_timestamp,

@@ -54,9 +54,7 @@ public class ReservationDTO {
 	 */
 	private String securityCode;
 
-	public String getReservationDate() {
-		return reservationDate;
-	}
+
 
 	public String getReservationName() {
 		return reservationName;
@@ -120,6 +118,9 @@ public class ReservationDTO {
 
 	public void setSecurityCode(String securityCode) {
 		this.securityCode = securityCode;
+	}
+	public String getReservationDate() {
+		return reservationDate;
 	}
 
 	public void setReservationDate(String reservationDate) {

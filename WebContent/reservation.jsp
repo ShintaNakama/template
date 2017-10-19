@@ -16,12 +16,23 @@
     //今日の日付データを変数nowDateに格納
     window.onload = function(){
     var nowDate = new Date();
+
     //月、日を取得する
     var month = nowDate.getMonth() +1;
     var day = nowDate.getDate();
     var yb = "日月火水木金土".charAt(nowDate.getDay());
     //出力用
     document.getElementById("view_time").innerHTML = month + "/" + day +"("+ yb +")";
+
+    var view_time2 = new Date();
+    view_time2.setDate(view_time2.getDate() + 1);
+    //月、日を取得する
+    month = view_time2.getMonth() +1;
+    day = view_time2.getDate();
+    yb = "日月火水木金土".charAt(view_time2.getDay());
+
+    document.getElementById("view_time2").innerHTML = month + "/" + day +"("+ yb +")";
+
     }
   </script>
   <div class="firstHeader">
@@ -125,7 +136,7 @@
 			</li>
 
 			<li class="events-group">
-				<div class="top-info"><span id="view_time4"></span></div>
+				<div class="top-info"><span id="view_time(3)"></span></div>
                 <ul>
                     <li>
                     </li>
@@ -133,7 +144,7 @@
 			</li>
 
 			<li class="events-group">
-				<div class="top-info"><span id="view_time5"></span></div>
+				<div class="top-info"><span id="view_time(4)"></span></div>
                 <ul>
                     <li>
                     </li>
@@ -141,7 +152,7 @@
 			</li>
 
 			<li class="events-group">
-				<div class="top-info"><span id="view_time6"></span></div>
+				<div class="top-info"><span id="view_time(5)"></span></div>
                 <ul>
                     <li>
                     </li>
@@ -149,7 +160,7 @@
 			</li>
 
 			<li class="events-group">
-				<div class="top-info"><span id="view_time7"></span></div>
+				<div class="top-info"><span id="view_time(6)"></span></div>
                 <ul>
                     <li>
                     </li>
