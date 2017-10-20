@@ -32,8 +32,8 @@
     day = view_time2.getDate();
     yb = "日月火水木金土".charAt(view_time2.getDay());
     var viewtime = "view_time" + (i + 1);
-
-
+    //var comparisonDay = 0;
+    //document.getElementByName(viewtime).innerHTML = month + "-" + day ; // 文字列比較用
     document.getElementById(viewtime).innerHTML = month + "/" + day +"("+ yb +")";
     }
     }
@@ -43,7 +43,6 @@
   </div>
   <s:form action="ReservationInputAction">
     <table>
-            <!--  <input type="hidden" name="reservationNumber"> -->
       <th>予約日</th>
         <td><input type="date" name="reservationDate" required style="color:black;width:12em;font-family:sans-serif;text-align:center; "value=" "></td>
       <th>予約開始時間</th>
@@ -116,11 +115,13 @@
 						</a>
 					</li>
 					<s:iterator value="reservationList">
+					<s:if test="reservationDate.equals(view_time)">
 					<li class="single-event" data-start="<s:property value="reservationStart"/>" data-end="<s:property value="reservationEnd"/>"  data-content="" data-event="event-1">
                         <a href="#0">
 							<em class="event-name"><s:property value="reservationName"/></em>
 					    </a>
 					</li>
+					</s:if>
 					</s:iterator>
 				</ul>
 
@@ -129,12 +130,15 @@
 			<li class="events-group">
 				<div class="top-info"><span id="view_time2"></span></div>
                 <ul>
+
                     <s:iterator value="reservationList">
+                    <s:if test="reservationDate == view_time2">
 					<li class="single-event" data-start="<s:property value="reservationStart"/>" data-end="<s:property value="reservationEnd"/>"  data-content="" data-event="event-1">
                         <a href="#0">
 							<em class="event-name"><s:property value="reservationName"/></em>
 					    </a>
 					</li>
+					</s:if>
 					</s:iterator>
                 </ul>
 			</li>
@@ -143,11 +147,13 @@
 				<div class="top-info"><span id="view_time3"></span></div>
                 <ul>
                     <s:iterator value="reservationList">
+                    <s:if test="reservationDate == view_time3">
 					<li class="single-event" data-start="<s:property value="reservationStart"/>" data-end="<s:property value="reservationEnd"/>"  data-content="" data-event="event-1">
                         <a href="#0">
 							<em class="event-name"><s:property value="reservationName"/></em>
 					    </a>
 					</li>
+					</s:if>
 					</s:iterator>
                 </ul>
 			</li>
@@ -156,11 +162,13 @@
 				<div class="top-info"><span id="view_time4"></span></div>
                 <ul>
                    <s:iterator value="reservationList">
+                   <s:if test="reservationDate == view_time4">
 					<li class="single-event" data-start="<s:property value="reservationStart"/>" data-end="<s:property value="reservationEnd"/>"  data-content="" data-event="event-1">
                         <a href="#0">
 							<em class="event-name"><s:property value="reservationName"/></em>
 					    </a>
 					</li>
+					</s:if>
 					</s:iterator>
                 </ul>
 			</li>
@@ -169,11 +177,13 @@
 				<div class="top-info"><span id="view_time5"></span></div>
                 <ul>
                    <s:iterator value="reservationList">
+                   <s:if test="reservationDate == view_time5">
 					<li class="single-event" data-start="<s:property value="reservationStart"/>" data-end="<s:property value="reservationEnd"/>"  data-content="" data-event="event-1">
                         <a href="#0">
 							<em class="event-name"><s:property value="reservationName"/></em>
 					    </a>
 					</li>
+					</s:if>
 					</s:iterator>
                 </ul>
 			</li>
@@ -182,11 +192,13 @@
 				<div class="top-info"><span id="view_time6"></span></div>
                 <ul>
                     <s:iterator value="reservationList">
+                    <s:if test="reservationDate == view_time6">
 					<li class="single-event" data-start="<s:property value="reservationStart"/>" data-end="<s:property value="reservationEnd"/>"  data-content="" data-event="event-1">
                         <a href="#0">
 							<em class="event-name"><s:property value="reservationName"/></em>
 					    </a>
 					</li>
+					</s:if>
 					</s:iterator>
                 </ul>
 			</li>
@@ -195,11 +207,13 @@
 				<div class="top-info"><span id="view_time7"></span></div>
                 <ul>
                     <s:iterator value="reservationList">
+                    <s:if test="reservationDate == view_time7">
 					<li class="single-event" data-start="<s:property value="reservationStart"/>" data-end="<s:property value="reservationEnd"/>"  data-content="" data-event="event-1">
                         <a href="#0">
 							<em class="event-name"><s:property value="reservationName"/></em>
 					    </a>
 					</li>
+					</s:if>
 					</s:iterator>
                 </ul>
 			</li>
