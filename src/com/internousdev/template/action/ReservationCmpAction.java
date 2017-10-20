@@ -4,7 +4,6 @@
 package com.internousdev.template.action;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -83,10 +82,7 @@ public class ReservationCmpAction extends ActionSupport implements SessionAware 
    * セキュリティコード
    */
   private String securityCode;
-  /**
-   * 予約リスト
-   */
-  public ArrayList<ReservationDTO> reservationList =new ArrayList<ReservationDTO>();
+
   /**
    * 処理結果を格納
    */
@@ -331,18 +327,6 @@ public class ReservationCmpAction extends ActionSupport implements SessionAware 
    */
   public void setPay(String pay){
 	  this.pay = pay;
-  }
-  /**
-   * 予約リストを取得するメソッド
-   */
-  public ArrayList<ReservationDTO> getReservationList(){
-	  return reservationList;
-  }
-  /**
-   * 予約リストを登録するメソッド
-   */
-  public void setReservationList(ArrayList<ReservationDTO> reservationList){
-	  this.reservationList = reservationList;
   }
   /**
    * セッション情報登録メソッド

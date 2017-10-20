@@ -31,8 +31,8 @@
 	    <td>内容が入ります</td>
 	</tr>
 </table>
-  <h1>ご予約、コート空き情報の確認はこちらから</h1>
-	<a href="reservation.jsp">予約ページ</a>
+  <h1>ご予約、コート空き情報の確認はこちらから</h1><!--<s:url action="ReservationViewAction" />">--><!-- reservation.jsp -->
+	<a href="<s:url action="ReservationViewAction" />">予約ページ</a>
 
 
 	<!-- <hr size="2" color="#000000"> -->

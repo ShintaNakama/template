@@ -24,15 +24,18 @@
     //出力用
     document.getElementById("view_time").innerHTML = month + "/" + day +"("+ yb +")";
 
+    for(var i = 1; i < 7 ; i++){
     var view_time2 = new Date();
-    view_time2.setDate(view_time2.getDate() + 1);
+    view_time2.setDate(view_time2.getDate() + i);
     //月、日を取得する
     month = view_time2.getMonth() +1;
     day = view_time2.getDate();
     yb = "日月火水木金土".charAt(view_time2.getDay());
+    var viewtime = "view_time" + (i + 1);
 
-    document.getElementById("view_time2").innerHTML = month + "/" + day +"("+ yb +")";
 
+    document.getElementById(viewtime).innerHTML = month + "/" + day +"("+ yb +")";
+    }
     }
   </script>
   <div class="firstHeader">
@@ -88,9 +91,10 @@
 	</div> <!-- .timeline -->
 
 	<div class="events">
+
 		<ul>
 			<li class="events-group">
-			    <div class="date"><s:property value="#session.reservationDate"/></div>
+
 				<div class="top-info"><span id="view_time"></span></div>
 
 				<ul>
@@ -100,7 +104,7 @@
 						</a>
 					</li>
 
-					<li class="single-event" data-start="11:00" data-end="12:30" data-content="event-test2" data-event="event-2">
+					<li class="single-event" data-start="19:00" data-end="20:00" data-content="event-test2" data-event="event-2">
 						<a href="#0">
 							<em class="event-name">test 2</em>
 						</a>
@@ -111,62 +115,96 @@
 							<em class="event-name">test 3</em>
 						</a>
 					</li>
-					<li class="single-event" data-start="<s:property value="#session.reservationStart"/>" data-end="<s:property value="#session.reservationEnd"/>"  data-content="" data-event="event-1">
-
-							<em class="event-name"><s:property value="#session.reservationName"/></em>
-
+					<s:iterator value="reservationList">
+					<li class="single-event" data-start="<s:property value="reservationStart"/>" data-end="<s:property value="reservationEnd"/>"  data-content="" data-event="event-1">
+                        <a href="#0">
+							<em class="event-name"><s:property value="reservationName"/></em>
+					    </a>
 					</li>
+					</s:iterator>
 				</ul>
+
 			</li>
 
 			<li class="events-group">
 				<div class="top-info"><span id="view_time2"></span></div>
                 <ul>
-                    <li>
-                    </li>
+                    <s:iterator value="reservationList">
+					<li class="single-event" data-start="<s:property value="reservationStart"/>" data-end="<s:property value="reservationEnd"/>"  data-content="" data-event="event-1">
+                        <a href="#0">
+							<em class="event-name"><s:property value="reservationName"/></em>
+					    </a>
+					</li>
+					</s:iterator>
                 </ul>
 			</li>
 
 			<li class="events-group">
 				<div class="top-info"><span id="view_time3"></span></div>
                 <ul>
-                    <li>
-                    </li>
+                    <s:iterator value="reservationList">
+					<li class="single-event" data-start="<s:property value="reservationStart"/>" data-end="<s:property value="reservationEnd"/>"  data-content="" data-event="event-1">
+                        <a href="#0">
+							<em class="event-name"><s:property value="reservationName"/></em>
+					    </a>
+					</li>
+					</s:iterator>
                 </ul>
 			</li>
 
 			<li class="events-group">
-				<div class="top-info"><span id="view_time(3)"></span></div>
+				<div class="top-info"><span id="view_time4"></span></div>
                 <ul>
-                    <li>
-                    </li>
+                   <s:iterator value="reservationList">
+					<li class="single-event" data-start="<s:property value="reservationStart"/>" data-end="<s:property value="reservationEnd"/>"  data-content="" data-event="event-1">
+                        <a href="#0">
+							<em class="event-name"><s:property value="reservationName"/></em>
+					    </a>
+					</li>
+					</s:iterator>
                 </ul>
 			</li>
 
 			<li class="events-group">
-				<div class="top-info"><span id="view_time(4)"></span></div>
+				<div class="top-info"><span id="view_time5"></span></div>
                 <ul>
-                    <li>
-                    </li>
+                   <s:iterator value="reservationList">
+					<li class="single-event" data-start="<s:property value="reservationStart"/>" data-end="<s:property value="reservationEnd"/>"  data-content="" data-event="event-1">
+                        <a href="#0">
+							<em class="event-name"><s:property value="reservationName"/></em>
+					    </a>
+					</li>
+					</s:iterator>
                 </ul>
 			</li>
 
 			<li class="events-group">
-				<div class="top-info"><span id="view_time(5)"></span></div>
+				<div class="top-info"><span id="view_time6"></span></div>
                 <ul>
-                    <li>
-                    </li>
+                    <s:iterator value="reservationList">
+					<li class="single-event" data-start="<s:property value="reservationStart"/>" data-end="<s:property value="reservationEnd"/>"  data-content="" data-event="event-1">
+                        <a href="#0">
+							<em class="event-name"><s:property value="reservationName"/></em>
+					    </a>
+					</li>
+					</s:iterator>
                 </ul>
 			</li>
 
 			<li class="events-group">
-				<div class="top-info"><span id="view_time(6)"></span></div>
+				<div class="top-info"><span id="view_time7"></span></div>
                 <ul>
-                    <li>
-                    </li>
+                    <s:iterator value="reservationList">
+					<li class="single-event" data-start="<s:property value="reservationStart"/>" data-end="<s:property value="reservationEnd"/>"  data-content="" data-event="event-1">
+                        <a href="#0">
+							<em class="event-name"><s:property value="reservationName"/></em>
+					    </a>
+					</li>
+					</s:iterator>
                 </ul>
 			</li>
 		</ul>
+
 	</div>
 
 <div class="event-modal">

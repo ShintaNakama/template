@@ -14,7 +14,6 @@
     <ul class="manu">
       <li><a href='<s:url action="GoTopAction" />'>トップ</a></li>
       <li><a href="cortInfo.jsp">コート詳細</a></li>
-      <li><a href='<s:url action="UserCreateAction" />'>新規ユーザ登録</a></li>
       <li><a href='<s:url action="LogoutAction" />'>ログアウト</a></li>
     </ul>
   </s:if>

@@ -46,6 +46,7 @@
     <input type=hidden name="reservationDate" value="<s:property value="reservationDate"/>">
     <input type=hidden name="reservationStart" value="<s:property value="reservationStart"/>">
     <input type=hidden name="reservationEnd" value="<s:property value="reservationEnd"/>">
+    <input type=hidden name="reservationName" value="<s:property value="reservationName"/>">
     <input type=hidden name="pay" value="<s:property value="pay"/>">
     <button class="Reservation">予約を完了します</button>
   </form>
