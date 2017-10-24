@@ -49,8 +49,11 @@
 	</div>
 	<section class="reservationBtn">
 		<h2>ご予約、コート空き情報の確認はこちらから</h2>
-		<a class="btn" href="<s:url action="ReservationViewAction" />"> 
-		<i class="fa fa-external-link" aria-hidden="true"></i>予約ページへ</a>
+		<p>※ご予約、コートの空き情報の確認はユーザー様に限ります。</p>
+		  <a class="btn1" href="<s:url action="ReservationViewAction" />">
+		予約ページへ<i class="fa fa-external-link" aria-hidden="true"></i></a>
+		<a class="btn2" href="<s:url action="LoginAction" />">
+		ログインページへ<i class="fa fa-external-link" aria-hidden="true"></i></a>
 	</section>
 </body>
 </html>

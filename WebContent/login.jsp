@@ -5,92 +5,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta http-equiv="Content-Style-Type" content="text/css" />
-	<meta http-equiv="Content-Script-Type" content="text/javascript" />
-	<meta http-equiv="imagetoolbar" content="no" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta charset="utf-8">
-	<title>Login画面</title>
-	<style type="text/css">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
 
-		/* ========TAG LAYOUT======== */
-		body {
-		   margin:0;
-		   padding:0;
-		   line-height:1.6;
-		   letter-spacing:1px;
-		   font-family:Verdana, Helvetica, sans-serif;
-		   font-size:12px;
-		   color:#333;
-		   background:#fff;
-		}
+<link rel="stylesheet" href="./css/login.css" type="text/css">
 
-		table {
-			text-align:center;
-			margin:0 auto;
-		}
+<meta charset="utf-8">
+<title>Login画面</title>
 
-		/* ========ID LAYOUT======== */
-		#top {
-		   width:780px;
-		   margin:30px auto;
-		   border:1px solid #333;
-		}
-
-		#header {
-		   width: 100%;
-		   height: 80px;
-		   background-color: black;
-		}
-
-		#main {
-		   width: 100%;
-		   height: 500px;
-		   text-align: center;
-		}
-
-		#footer {
-			width: 100%;
-			height: 80px;
-			background-color: black;
-			clear:both;
-		}
-
-		#text-link {
-			display: inline-block;
-			text-align: right;
-		}
-	</style>
 </head>
 
 <body>
-  <header>
-    <s:include value="header.jsp" />
-  </header>
-	<div id="main">
-		<div id="top">
-			<p>Login</p>
-		</div>
-		<div>
-			<h3>商品を購入する際にはログインをお願いします。</h3>
-			<s:form action="LoginAction">
-				<s:textfield name="loginUserId"/>
-				<s:password name="loginPassword"/>
-				<s:submit value="ログイン"/>
-			</s:form>
-			<br/>
-			<div id="text-link">
-				<p>新規ユーザー登録は<a href='<s:url action="UserCreateAction" />'>こちら</a></p>
-				<p>TOPへ戻る場合は<a href='<s:url action="GoTopAction" />'>こちら</a></p>
+	<header>
+		<s:include value="header.jsp" />
+	</header>
+	<section class="main">
+		<div class="container">
+			<div class="login-container">
+				<h1>Login</h1>
+				<p>ログインIDとパスワードを入力して下さい</p>
+				<div id="output"></div>
+				<div class="avatar"></div>
+				<div class="form-box">
+					<s:form action="LoginAction">
+						<input type="text" name="loginUserId" placeholder="loginUserId">
+						<input type="password" name="loginPassword"
+							placeholder="loginPassword">
+						<button class="login" type="submit">LOGIN</button>
+					</s:form>
+				</div>
 			</div>
 		</div>
+		<section class="text-link">
+			<a class="btn1" href='<s:url action="UserCreateAction" />'>新規ユーザー登録はこちら</a>
+			<a class="btn2" href='<s:url action="GoTopAction" />'>TOPへ戻る場合はこちら</a>
+		</section>
+	</section>
 	</div>
-	<div id="footer">
-	 	<div id="pr">
-		</div>
-	</div>
+	<section class="footer"></section>
 </body>
 </html>

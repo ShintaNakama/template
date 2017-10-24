@@ -1,0 +1,204 @@
+html,body{
+    position: relative;
+    height: 100%;
+}
+body {
+	/* 画像ファイルの指定 */
+	background-image: url("../img/background.jpg");
+	/* 画像を常に天地左右の中央に配置 */
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない */
+	background-repeat: no-repeat;
+	/* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+	background-attachment: fixed;
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+	background-size: cover;
+	/* 背景画像が読み込まれる前に表示される背景のカラー */
+	background-color: #464646;
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
+	letter-spacing: 1px;
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+}
+a {
+	text-decoration: none;
+}
+
+#main {
+	margin-top: 30px;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	margin-top: 200px;
+}
+
+#text-link {
+	display: inline-block;
+	text-align: center;
+}
+.btn1 {
+	display: inline-block;
+	margin: 5px 5px 20px 500px;
+    width: 300px;
+	line-height: 45px;
+	background: #f39800;
+	text-align: center;
+	color: #ffffff;
+	border-radius: 5px;
+	opacity: 0.9;
+}
+.btn2 {
+	display: inline-block;
+	margin: 5px 5px 20px 10px;
+    width: 300px;
+	line-height: 45px;
+	background: #8080ff;
+	text-align: center;
+	color: #ffffff;
+	border-radius: 5px;
+	opacity: 0.9;
+}
+.btn1:hover, .btn2:hover, .login-container:hover, .login:hover  {
+	opacity: 1;
+}
+
+.login-container{
+    position: relative;
+    width: 300px;
+    margin: 80px auto;
+    padding: 40px 40px 40px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    opacity: 0.9;
+}
+
+#output{
+    position: absolute;
+    width: 300px;
+    top: -75px;
+    left: 0;
+    color: #fff;
+}
+
+#output.alert-success{
+    background: rgb(25, 204, 25);
+}
+
+#output.alert-danger{
+    background: rgb(228, 105, 105);
+}
+
+
+.login-container::before,.login-container::after{
+    content: "";
+    position: absolute;
+    width: 100%;height: 100%;
+    top: 3.5px;left: 0;
+    background: #fff;
+    z-index: -1;
+    -webkit-transform: rotateZ(4deg);
+    -moz-transform: rotateZ(4deg);
+    -ms-transform: rotateZ(4deg);
+    border: 1px solid #ccc;
+
+}
+
+.login-container::after{
+    top: 5px;
+    z-index: -2;
+    -webkit-transform: rotateZ(-2deg);
+     -moz-transform: rotateZ(-2deg);
+      -ms-transform: rotateZ(-2deg);
+
+}
+
+.avatar{
+    width: 100px;height: 100px;
+    margin: 10px auto 30px;
+    border-radius: 100%;
+    border: 2px solid #aaa;
+    background-size: cover;
+    background-image: url("../img/ball1.jpg");
+}
+
+.form-box input{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    height:40px;
+    border: 1px solid #ccc;;
+    background: #fafafa;
+    transition:0.2s ease-in-out;
+
+}
+
+.form-box input:focus{
+    outline: 0;
+    background: #eee;
+}
+
+.form-box input[type="text"]{
+    border-radius: 5px 5px 0 0;
+    text-transform: lowercase;
+}
+
+.form-box input[type="password"]{
+    border-radius: 0 0 5px 5px;
+    border-top: 0;
+}
+
+.form-box button {
+    margin: 10px;
+    border-radius: 5px 5px 5px 5px;
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    opacity: 0.9;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
