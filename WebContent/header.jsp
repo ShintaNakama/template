@@ -13,28 +13,25 @@
 	<!-- ログイン時 -->
 	<s:if test="#session.loginFlg !=null">
 		<section class="header">
-
-			<ul class="manu">
-
-				<li><a href='<s:url action="GoTopAction" />'>トップ</a></li>
-				<li><a href="cortInfo.jsp">コート詳細</a></li>
-				<li><a href='<s:url action="LogoutAction" />'>ログアウト</a></li>
-			</ul>
+			<div class="header-left">InternousFutCort</div>
+			<div class="header-right">
+				<a href='<s:url action="GoTopAction" />'>トップ</a>
+				<a href="cortInfo.jsp">コート詳細</a>
+				<a href='<s:url action="LogoutAction" />'>ログアウト</a>
+			</div>
 		</section>
 	</s:if>
 	<!-- 未ログイン時 -->
 	<s:else>
 		<section class="header">
-
-			<ul class="manu">
-
-				<li><a href='<s:url action="GoTopAction" />'>トップ</a></li>
-				<li><a href="cortInfo.jsp">コート詳細</a></li>
-				<li><a href='<s:url action="LoginAction" />'>ログイン</a></li>
-				<li><a href='<s:url action="UserCreateAction" />'>新規ユーザ登録</a></li>
-			</ul>
+			<div class="header-left">InternousFutCort</div>
+			<div class="header-right">
+				<a href='<s:url action="GoTopAction" />'>トップ</a>
+				<a href="cortInfo.jsp">コート詳細</a> 
+				<a href='<s:url action="LoginAction" />'>ログイン</a>
+				<a href='<s:url action="UserCreateAction" />'>新規ユーザ登録</a>
+			</div>
 		</section>
 	</s:else>
-
 </body>
 </html>

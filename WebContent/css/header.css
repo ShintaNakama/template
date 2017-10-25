@@ -2,30 +2,34 @@ body {
 	margin: 0;
 }
 .header {
-	background-color: black;
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+  position :fixed;
+  top: 0;
+  z-index: 10;
+}
+.header-left {
+  float: left;
+  width: 124px;
+  margin-top: 20px;
+  margin-left: 20px;
+  color: white;
+}
+.header-right {
+  float: right;
 }
 
-
-.manu {
-	text-align: center;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	line-height: 48px;
-	position: relative;
-
+.header-right a {
+  line-height: 65px;
+  padding: 0 25px;
+  color: white;
+  display: block;
+  float: left;
+  transition: all 0.5s;
+  text-decoration: none;
 }
 
-.manu li {
-	margin: 0 10px;
-	padding: 0 10px;
-	border: 1px solid #AAA;
-	border-radius: 5px 5px 5px 5px;
-	background: #ffffff;
-	display: inline-block;
-	font-size: 20px;
-}
-
-.manu a {
-	text-decoration: none;
+.header-right a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
