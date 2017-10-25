@@ -15,9 +15,8 @@
 	<header>
 		<s:include value="header.jsp" />
 	</header>
-
+    <h1>CortInfo</h1>
 	<section class="infoTable">
-		<h1>コート詳細</h1>
 		<table>
 			<tr>
 				<th scope="row">住所</th>
@@ -37,16 +36,15 @@
 			</tr>
 		</table>
 	</section>
-	<div id="shopinfobb" align="center">
-		<h2 id="shopinfo" class="bline" style="width: 5.5em" align="center">CortMap</h2>
+	<section class="shopinfobb">
 
-	</div>
 	<div style="width: 500px; margin: auto;">
 		<!-- GoogleMap -->
 		<iframe
 			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.910248408922!2d139.76482297877934!3d35.70382618382467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c18b82a5b79%3A0xf4b11fd9c5add54c!2z44CSMTEzLTAwMzQg5p2x5Lqs6YO95paH5Lqs5Yy65rmv5bO277yT5LiB55uu77yS4oiS77yR77ySIOW-oeiMtuODjuawtOWkqeelnuODk-ODqw!5e0!3m2!1sja!2sjp!4v1460439784843"
 			width="500" height="300" style="border: 0"></iframe>
 	</div>
+	</section>
 	<section class="reservationBtn">
 		<h2>ご予約、コート空き情報の確認はこちらから</h2>
 		<p>※ご予約、コートの空き情報の確認はユーザー様に限ります。</p>

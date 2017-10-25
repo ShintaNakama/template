@@ -46,7 +46,6 @@
 			<a class="btn2" href='<s:url action="GoTopAction" />'>TOPへ戻る場合はこちら</a>
 		</section>
 	</section>
-	</div>
 	<section class="footer"></section>
 </body>
 </html>

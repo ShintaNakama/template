@@ -1,0 +1,32 @@
+.reservationTable {
+	width: 900px;
+	margin-top: 40px;
+	margin-left: 200px;
+	font-size: 15px;
+}
+
+.reservationTable table {
+	text-align: center;
+}
+
+.reservationTable th {
+	padding: 0px 10px;
+}
+
+.reservationTable td {
+	}
+
+.btn {
+	float: right;
+	margin-right: 100px;
+	margin-bottom: 20px;
+	display: inline-block;
+	width: 150px;
+	font-size: 20px; line-height : 45px;
+	background: #f39800;
+	text-align: center;
+	color: #ffffff;
+	border-radius: 5px;
+	opacity: 0.9;
+	line-height: 45px;
+}
