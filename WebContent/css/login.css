@@ -161,6 +161,7 @@ a {
     text-align: center;
     color: #fff;
     opacity: 0.9;
+    cursor: pointer;
 }
 
 .animated {

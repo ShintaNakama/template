@@ -109,8 +109,8 @@
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
 									data-end="<s:property value="reservationEnd"/>" data-content=""
-									data-event="event-1"><a href="#0">
-									<em class="event-name"><s:property value="reservationName" /></em>
+									data-event="event-1"><a href="#0"> <em
+										class="event-name"><s:property value="reservationName" /></em>
 								</a></li>
 							</s:iterator>
 						</s:if>
@@ -118,8 +118,7 @@
 							<li class="single-event" data-start="<s:property value=""/>"
 								data-end="<s:property value=""/>" data-content=""
 								data-event="event-3"><a href="#0"><em
-									class="event-name">予約無し</em>
-							</a>
+									class="event-name">予約無し</em> </a>
 						</s:else>
 					</ul>
 				</li>
@@ -159,9 +158,9 @@
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
 									data-end="<s:property value="reservationEnd"/>" data-content=""
-									data-event="event-1"><em
+									data-event="event-1"><a href="#0"><em
 										class="event-name"><s:property value="reservationName" /></em>
-								</li>
+								</a></li>
 							</s:iterator>
 						</s:if>
 						<s:else>
@@ -277,6 +276,18 @@
 
 		</div>
 
+		<div class="pager">
+			<ul>
+				<li><a href="#">prev</a></li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li class="current"><span>3</span></li>
+				<li><a href="#">4</a></li>
+				<li><span>...</span></li>
+				<li><a href="#">123</a></li>
+				<li><a href="#">next</a></li>
+			</ul>
+		</div>
 		<div class="event-modal">
 			<header class="header">
 				<div class="content">
@@ -288,12 +299,8 @@
 			</header>
 
 			<div class="body">
-				<div class="event-info">
-
-				</div>
-				<div class="body-bg">
-
-				</div>
+				<div class="event-info"></div>
+				<div class="body-bg"></div>
 			</div>
 
 			<a href="#0" class="close">Close</a>

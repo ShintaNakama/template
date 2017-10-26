@@ -15,7 +15,7 @@ import com.internousdev.template.util.DBConnector;
  * @author internousdev
  * 予約状況を表示させるためのDAO
  */
-public class ReservationViewDAO {
+public class ReservationViewDAO2 {
 	private DBConnector dbConnector = new DBConnector();
 	private Connection connection = dbConnector.getConnection();
 
@@ -26,7 +26,7 @@ public class ReservationViewDAO {
 
 	public ArrayList<String> display(){
 
-		String sql = "SELECT reservation_date FROM reservation_info where reservation_date between ? AND now() + INTERVAL 7 DAY GROUP BY reservation_date";
+		String sql = "SELECT reservation_date FROM reservation_info where reservation_date between now() AND now() + INTERVAL 7 DAY GROUP BY reservation_date";
 		ArrayList<String> reservationSearch = new ArrayList<>();
 
 		try {

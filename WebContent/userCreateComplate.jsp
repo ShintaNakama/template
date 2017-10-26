@@ -22,7 +22,6 @@
 		   line-height:1.6;
 		   letter-spacing:1px;
 		   font-family:Verdana, Helvetica, sans-serif;
-		   font-size:12px;
 		   color:#333;
 		   background:#fff;
 		}
