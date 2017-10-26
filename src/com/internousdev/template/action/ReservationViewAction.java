@@ -71,9 +71,10 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 	/**
 	 * 次の週の初めの日
 	 */
-	private String nextWeekFarstDay;
+	private int nextWeekFarstDay;
 
 
+	
 	ArrayList<String> reservationSearch = new ArrayList<>();
 
 	/**
@@ -83,17 +84,18 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 	public String execute(){
 
 		String result = ERROR;
-
+         /*ログイン中かチェック*/
 		if(session.containsKey("loginFlg") == true) {
 
 
 
 			ReservationViewDAO dao = new ReservationViewDAO();
-
-			reservationSearch = dao.display();
+            /*今日から7日間の予約日リスト（reservationSearchList)を取得しその内容量をsizeに格納*/
+			reservationSearch = dao.display(nextWeekFarstDay);
 			int size =reservationSearch.size();
+			/*今日の日付を取得し、switch分で取得した日付から７日後までを格納したリスト Dayを作成*/
 			ArrayList<String> Day = new ArrayList<>();
-
+			
 			for(int i=0; i<7; i++){
 				Calendar cal = Calendar.getInstance();
 				cal.add(Calendar.MONTH, 1);
@@ -101,93 +103,108 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 				int year = cal.get((Calendar.YEAR));
 				int month = cal.get((Calendar.MONTH));
 				int date = cal.get(Calendar.DATE);
-				Day.add(year + "-" + month + "-" + date + " 00:00:00.0");
-
+				
+				/*次週へ遷移するとき、nextWeekNumberの値に合わせて13週間の最初の日を取得*/
 				switch (nextWeekNumber) {
+				case 1:
+					nextWeekFarstDay = date;
+					Day.add(year + "-" + month + "-" + date + " 00:00:00.0");
+					break;
 				case 2:
 					cal.add(Calendar.DATE, 7);
 					date = cal.get(Calendar.DATE);
-					nextWeekFarstDay = (year + "-" + month + "-" + date + " 00:00:00.0");
+					nextWeekFarstDay = date;
+					Day.add(year + "-" + month + "-" + date + " 00:00:00.0");
 					break;
 				case 3:
-					cal.add(Calendar.DATE, 7);
+					cal.add(Calendar.DATE, 14);
 					date = cal.get(Calendar.DATE);
-					nextWeekFarstDay = (year + "-" + month + "-" + date + " 00:00:00.0");
+					nextWeekFarstDay = date;
+					Day.add(year + "-" + month + "-" + date + " 00:00:00.0");
 					break;
 				case 4:
-					cal.add(Calendar.DATE, 7);
+					cal.add(Calendar.DATE, 21);
 					date = cal.get(Calendar.DATE);
-					nextWeekFarstDay = (year + "-" + month + "-" + date + " 00:00:00.0");
+					nextWeekFarstDay = date;
+					Day.add(year + "-" + month + "-" + date + " 00:00:00.0");
 					break;
 				case 5:
-					cal.add(Calendar.DATE, 7);
+					cal.add(Calendar.DATE, 28);
 					date = cal.get(Calendar.DATE);
-					nextWeekFarstDay = (year + "-" + month + "-" + date + " 00:00:00.0");
+					nextWeekFarstDay = date;
+					Day.add(year + "-" + month + "-" + date + " 00:00:00.0");
 					break;
 				case 6:
-					cal.add(Calendar.DATE, 7);
+					cal.add(Calendar.DATE, 35);
 					date = cal.get(Calendar.DATE);
-					nextWeekFarstDay = (year + "-" + month + "-" + date + " 00:00:00.0");
+					nextWeekFarstDay = date;
+					Day.add(year + "-" + month + "-" + date + " 00:00:00.0");
 					break;
 				case 7:
-					cal.add(Calendar.DATE, 7);
+					cal.add(Calendar.DATE, 42);
 					date = cal.get(Calendar.DATE);
-					nextWeekFarstDay = (year + "-" + month + "-" + date + " 00:00:00.0");
+					nextWeekFarstDay = date;
+					Day.add(year + "-" + month + "-" + date + " 00:00:00.0");
 					break;
 				case 8:
-					cal.add(Calendar.DATE, 7);
+					cal.add(Calendar.DATE, 49);
 					date = cal.get(Calendar.DATE);
-					nextWeekFarstDay = (year + "-" + month + "-" + date + " 00:00:00.0");
+					nextWeekFarstDay = date;
+					Day.add(year + "-" + month + "-" + date + " 00:00:00.0");
 					break;
 				case 9:
-					cal.add(Calendar.DATE, 7);
+					cal.add(Calendar.DATE, 56);
 					date = cal.get(Calendar.DATE);
-					nextWeekFarstDay = (year + "-" + month + "-" + date + " 00:00:00.0");
+					nextWeekFarstDay = date;
+					Day.add(year + "-" + month + "-" + date + " 00:00:00.0");
 					break;
 				case 10:
-					cal.add(Calendar.DATE, 7);
+					cal.add(Calendar.DATE, 63);
 					date = cal.get(Calendar.DATE);
-					nextWeekFarstDay = (year + "-" + month + "-" + date + " 00:00:00.0");
+					nextWeekFarstDay = date;
+					Day.add(year + "-" + month + "-" + date + " 00:00:00.0");
 					break;
 				case 11:
-					cal.add(Calendar.DATE, 7);
+					cal.add(Calendar.DATE, 70);
 					date = cal.get(Calendar.DATE);
-					nextWeekFarstDay = (year + "-" + month + "-" + date + " 00:00:00.0");
+					nextWeekFarstDay = date;
+					Day.add(year + "-" + month + "-" + date + " 00:00:00.0");
 					break;
 				case 12:
-					cal.add(Calendar.DATE, 7);
+					cal.add(Calendar.DATE, 77);
 					date = cal.get(Calendar.DATE);
-					nextWeekFarstDay = (year + "-" + month + "-" + date + " 00:00:00.0");
+					nextWeekFarstDay = date;
+					Day.add(year + "-" + month + "-" + date + " 00:00:00.0");
 					break;
 				case 13:
-					cal.add(Calendar.DATE, 7);
+					cal.add(Calendar.DATE, 84);
 					date = cal.get(Calendar.DATE);
-					nextWeekFarstDay = (year + "-" + month + "-" + date + " 00:00:00.0");
+					nextWeekFarstDay = date;
+					Day.add(year + "-" + month + "-" + date + " 00:00:00.0");
 					break;
 				default:
 					break;
 				}
 			}
-            if(nextWeekNumber > 2) {
-
-			}
+            /*Dayリストの値の分、reservationSerachListの値とDayリストの日付が同じ予約情報を
+             * reservationList1~7に格納*/
 			for(int i=0;Day.size()>i;i++){
-				for(int j=0;size>j;j++){
-					if(Day.get(i).equals(reservationSearch.get(j))) {
+				while(size > nextWeekFarstDay){
+					if(Day.get(i).equals(reservationSearch.get(nextWeekFarstDay))) {
 						if(i == 0){
-							reservationList1 = dao.display2(reservationSearch.get(j));
+							reservationList1 = dao.display2(reservationSearch.get(nextWeekFarstDay));
 						}else if (i == 1) {
-							reservationList2 = dao.display2(reservationSearch.get(j));
+							reservationList2 = dao.display2(reservationSearch.get(nextWeekFarstDay));
 						}else if (i == 2) {
-							reservationList3 = dao.display2(reservationSearch.get(j));
+							reservationList3 = dao.display2(reservationSearch.get(nextWeekFarstDay));
 						}else if (i == 3) {
-							reservationList4 = dao.display2(reservationSearch.get(j));
+							reservationList4 = dao.display2(reservationSearch.get(nextWeekFarstDay));
 						}else if (i == 4) {
-							reservationList5 = dao.display2(reservationSearch.get(j));
+							reservationList5 = dao.display2(reservationSearch.get(nextWeekFarstDay));
 						}else if (i == 5) {
-							reservationList6 = dao.display2(reservationSearch.get(j));
+							reservationList6 = dao.display2(reservationSearch.get(nextWeekFarstDay));
 						}else if (i == 6) {
-							reservationList7 = dao.display2(reservationSearch.get(j));
+							reservationList7 = dao.display2(reservationSearch.get(nextWeekFarstDay));
 						} else {
 							continue;
 						}
@@ -356,6 +373,24 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 	 */
 	public void setReservationList7(ArrayList<ReservationDTO> reservationList7){
 		this.reservationList7 = reservationList7;
+	}
+	public int getNextWeekNumber() {
+		return nextWeekNumber;
+	}
+
+
+	public void setNextWeekNumber(int nextWeekNumber) {
+		this.nextWeekNumber = nextWeekNumber;
+	}
+
+
+	public int getNextWeekFarstDay() {
+		return nextWeekFarstDay;
+	}
+
+
+	public void setNextWeekFarstDay(int nextWeekFarstDay) {
+		this.nextWeekFarstDay = nextWeekFarstDay;
 	}
 
 }

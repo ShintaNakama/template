@@ -53,8 +53,20 @@ public class ReservationDTO {
 	 * セキュリティコード
 	 */
 	private String securityCode;
+	/**
+	 * 次の週の初めの日
+	 */
+	private int nextWeekFarstDay;
 
 
+
+	public int getNextWeekFarstDay() {
+		return nextWeekFarstDay;
+	}
+
+	public void setNextWeekFarstDay(int nextWeekFarstDay) {
+		this.nextWeekFarstDay = nextWeekFarstDay;
+	}
 
 	public String getReservationName() {
 		return reservationName;

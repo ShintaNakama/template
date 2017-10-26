@@ -275,19 +275,23 @@
 			</ul>
 
 		</div>
-
+        <form action="ReservationViewAction">
+        <% for(int n=1; n<14; n++) {
+        	int i = n;
+        }%>
+        <input type="hidden" name="nextWeekNumber" value=<% =i%>>
 		<div class="pager">
 			<ul>
-				<li><a href="#">prev</a></li>
 				<li><a href="#">1</a></li>
+				
 				<li><a href="#">2</a></li>
 				<li class="current"><span>3</span></li>
 				<li><a href="#">4</a></li>
-				<li><span>...</span></li>
-				<li><a href="#">123</a></li>
+				<li><a href="#">5</a></li>
 				<li><a href="#">next</a></li>
 			</ul>
 		</div>
+		</form>
 		<div class="event-modal">
 			<header class="header">
 				<div class="content">
