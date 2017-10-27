@@ -78,7 +78,7 @@
 			<ul>
 				<li class="events-group">
 					<div class="top-info">
-						<span><s:property value="Day[0]" /></span>
+						<span><s:property value="viewDayList[0]" /></span>
 					</div>
 					<ul>
 						<s:if test="reservationList1 != null">
@@ -102,7 +102,7 @@
 
 				<li class="events-group">
 					<div class="top-info">
-						<span><s:property value="Day[1]" /></span>
+						<span><s:property value="viewDayList[1]" /></span>
 					</div>
 					<ul>
 						<s:if test="reservationList2 != null">
@@ -127,7 +127,7 @@
 
 				<li class="events-group">
 					<div class="top-info">
-						<span><s:property value="Day[2]" /></span>
+						<span><s:property value="viewDayList[2]" /></span>
 					</div>
 					<ul>
 						<s:if test="reservationList3 != null">
@@ -152,7 +152,7 @@
 
 				<li class="events-group">
 					<div class="top-info">
-						<span><s:property value="Day[3]" /></span>
+						<span><s:property value="viewDayList[3]" /></span>
 					</div>
 					<ul>
 						<s:if test="reservationList4 != null">
@@ -177,7 +177,7 @@
 
 				<li class="events-group">
 					<div class="top-info">
-						<span><s:property value="Day[4]" /></span>
+						<span><s:property value="viewDayList[4]" /></span>
 					</div>
 					<ul>
 						<s:if test="reservationList5 != null">
@@ -202,7 +202,7 @@
 
 				<li class="events-group">
 					<div class="top-info">
-						<span><s:property value="Day[5]" /></span>
+						<span><s:property value="viewDayList[5]" /></span>
 					</div>
 					<ul>
 						<s:if test="reservationList6 != null">
@@ -227,7 +227,7 @@
 
 				<li class="events-group">
 					<div class="top-info">
-						<span><s:property value="Day[6]" /></span>
+						<span><s:property value="viewDayList[6]" /></span>
 					</div>
 					<ul>
 						<s:if test="reservationList7 != null">

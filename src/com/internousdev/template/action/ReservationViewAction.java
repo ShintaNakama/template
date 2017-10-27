@@ -3,6 +3,7 @@
  */
 package com.internousdev.template.action;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Map;
@@ -72,7 +73,11 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 	/**
 	 *今日の日付け
 	 */
-	private LocalDate nowDay = LocalDate.now() ;
+	private LocalDate nowDay = LocalDate.now();
+	/**
+	 * 今日の曜日
+	 */
+	private DayOfWeek youbi;
     /**
      * nextWeekNumberから7日間の日付けリスト
      */
@@ -81,7 +86,7 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 	/**
 	 * 日付け表示用Dayリスト
 	 */
-	private ArrayList<String> viewDayList = new ArrayList<>();
+    ArrayList<String> viewDayList = new ArrayList<>();
 
 
 	ArrayList<String> reservationSearch = new ArrayList<>();
@@ -124,42 +129,55 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 				switch (nextWeekNumber) {
 				case 1:
 					Day = addDay(nowDay, 0);
+					viewDayList = addViewDayList(nowDay,youbi,0);
 					break;
 				case 2:
 					Day = addDay(nowDay, 1);
+					viewDayList = addViewDayList(nowDay,youbi,1);
 					break;
 				case 3:
 					Day = addDay(nowDay, 2);
+					viewDayList = addViewDayList(nowDay,youbi,2);
 					break;
 				case 4:
 					Day = addDay(nowDay, 3);
+					viewDayList = addViewDayList(nowDay,youbi,3);
 					break;
 				case 5:
 					Day = addDay(nowDay, 4);
+					viewDayList = addViewDayList(nowDay,youbi,4);
 					break;
 				case 6:
 					Day = addDay(nowDay, 5);
+					viewDayList = addViewDayList(nowDay,youbi,5);
 					break;
 				case 7:
 					Day = addDay(nowDay, 6);
+					viewDayList = addViewDayList(nowDay,youbi,6);
 					break;
 				case 8:
 					Day = addDay(nowDay, 7);
+					viewDayList = addViewDayList(nowDay,youbi,7);
 					break;
 				case 9:
 					Day = addDay(nowDay, 8);
+					viewDayList = addViewDayList(nowDay,youbi,8);
 					break;
 				case 10:
 					Day = addDay(nowDay, 9);
+					viewDayList = addViewDayList(nowDay,youbi,9);
 					break;
 				case 11:
 					Day = addDay(nowDay, 10);
+					viewDayList = addViewDayList(nowDay,youbi,10);
 					break;
 				case 12:
 					Day = addDay(nowDay, 11);
+					viewDayList = addViewDayList(nowDay,youbi,11);
 					break;
 				case 13:
 					Day = addDay(nowDay, 12);
+					viewDayList = addViewDayList(nowDay,youbi,12);
 					break;
 				default:
 					break;
@@ -208,6 +226,7 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
      * */
 	public ArrayList<String> addDay(LocalDate nextWeekFarstDay, int addWeek){
 	    ArrayList<String> Day = new ArrayList<>();
+	    
 		nextWeekFarstDay = nextWeekFarstDay.plusWeeks(addWeek);
 		for(int d = 0; d < 7; d++){
 			Day.add(nextWeekFarstDay.toString() + " 00:00:00.0");
@@ -215,13 +234,24 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 		}
 		return Day;
 	}
-
-
-	 public ArrayList<String> getDay() {
-			return Day;
+	public ArrayList<String> addViewDayList(LocalDate nextWeekFarstDay, DayOfWeek youbi, int addWeek){
+		ArrayList<String> viewDayList = new ArrayList<>();
+		nextWeekFarstDay = nextWeekFarstDay.plusWeeks(addWeek);
+		
+		for(int n = 0; n < 7; n++) {
+			youbi = nextWeekFarstDay.getDayOfWeek();
+			viewDayList.add(nextWeekFarstDay.toString() + " " + youbi);
+			nextWeekFarstDay = nextWeekFarstDay.plusDays(1);
 		}
-		public void setDay(ArrayList<String> Day) {
-			this.Day = Day;
+		return viewDayList;
+	}
+
+
+	 public ArrayList<String> getViewDayList() {
+			return viewDayList;
+		}
+		public void setViewDayList(ArrayList<String> viewDayList) {
+			this.viewDayList = viewDayList;
 		}
 	public boolean getLoginFlg() {
 		return loginFlg;
