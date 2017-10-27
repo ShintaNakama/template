@@ -15,30 +15,6 @@
 <title>reservationPage</title>
 </head>
 <body>
-	<script type="text/javascript">
-    //今日の日付データを変数nowDateに格納
-    window.onload = function(){
-    var nowDate = new Date();
-    //月、日を取得する
-    var month = nowDate.getMonth() +1;
-    var day = nowDate.getDate();
-    var yb = "日月火水木金土".charAt(nowDate.getDay());
-    //出力用
-    document.getElementById("viewtime1").innerHTML = month + "/" + day +"("+ yb +")";
-    for(var i = 1; i < 7 ; i++){
-    var view_time2 = new Date();
-    view_time2.setDate(view_time2.getDate() + i);
-    //月、日を取得する
-    month = view_time2.getMonth() +1;
-    day = view_time2.getDate();
-    yb = "日月火水木金土".charAt(view_time2.getDay());
-    var viewtime = "view_time" + (i + 1);
-    //var comparisonDay = viewti;
-    //document.getElementByName(viewtime).innerHTML = month + "-" + day ; // 文字列比較用
-    document.getElementById(viewtime).innerHTML = month + "/" + day +"("+ yb +")";
-    }
-    }
-  </script>
 	<div class="firstHeader">
 		<s:include value="header.jsp" />
 	</div>
@@ -97,11 +73,12 @@
 			</ul>
 		</div>
 		<!-- .timeline -->
+
 		<div class="events">
 			<ul>
 				<li class="events-group">
 					<div class="top-info">
-						<span id="viewtime1"></span>
+						<span><s:property value="Day[0]" /></span>
 					</div>
 					<ul>
 						<s:if test="reservationList1 != null">
@@ -125,7 +102,7 @@
 
 				<li class="events-group">
 					<div class="top-info">
-						<span id="view_time2"></span>
+						<span><s:property value="Day[1]" /></span>
 					</div>
 					<ul>
 						<s:if test="reservationList2 != null">
@@ -150,7 +127,7 @@
 
 				<li class="events-group">
 					<div class="top-info">
-						<span id="view_time3"></span>
+						<span><s:property value="Day[2]" /></span>
 					</div>
 					<ul>
 						<s:if test="reservationList3 != null">
@@ -175,7 +152,7 @@
 
 				<li class="events-group">
 					<div class="top-info">
-						<span id="view_time4"></span>
+						<span><s:property value="Day[3]" /></span>
 					</div>
 					<ul>
 						<s:if test="reservationList4 != null">
@@ -200,7 +177,7 @@
 
 				<li class="events-group">
 					<div class="top-info">
-						<span id="view_time5"></span>
+						<span><s:property value="Day[4]" /></span>
 					</div>
 					<ul>
 						<s:if test="reservationList5 != null">
@@ -225,7 +202,7 @@
 
 				<li class="events-group">
 					<div class="top-info">
-						<span id="view_time6"></span>
+						<span><s:property value="Day[5]" /></span>
 					</div>
 					<ul>
 						<s:if test="reservationList6 != null">
@@ -250,7 +227,7 @@
 
 				<li class="events-group">
 					<div class="top-info">
-						<span id="view_time7"></span>
+						<span><s:property value="Day[6]" /></span>
 					</div>
 					<ul>
 						<s:if test="reservationList7 != null">
@@ -275,23 +252,47 @@
 			</ul>
 
 		</div>
-        <form action="ReservationViewAction">
-        <% for(int n=1; n<14; n++) {
-        	int i = n;
-        }%>
-        <input type="hidden" name="nextWeekNumber" value=<% =i%>>
+
+		<s:form action="ReservationViewAction">
+		</s:form>
 		<div class="pager">
 			<ul>
-				<li><a href="#">1</a></li>
-				
-				<li><a href="#">2</a></li>
-				<li class="current"><span>3</span></li>
-				<li><a href="#">4</a></li>
-				<li><a href="#">5</a></li>
-				<li><a href="#">next</a></li>
+				<li><input type="hidden" name="nextWeekNumber" value=1><a
+					href="ReservationViewAction">1</a></li>
+			</ul>
+			<ul>
+				<li><input type="hidden" name="nextWeekNumber" value=2><a
+					href="ReservationViewAction">2</a></li>
+			</ul>
+			<ul>
+				<li><input type="hidden" name="nextWeekNumber" value=3><a
+					href="ReservationViewAction">3</a></li>
+			</ul>
+			<ul>
+				<li><input type="hidden" name="nextWeekNumber" value=4><a
+					href="ReservationViewAction">4</a></li>
+			</ul>
+			<ul>
+				<li><input type="hidden" name="nextWeekNumber" value=5><a
+					href="ReservationViewAction">5</a></li>
 			</ul>
 		</div>
-		</form>
+		<!-- <script type="text/javascript">
+		var nextWeekNumber =1;
+            while(nextWeekNumber < 14){
+            	nextWeekNumber++;
+            	document.write(
+            			"<s:form action='ReservationViewAction'>
+            			<div class='pager'>
+            				<ul>
+            					<li><input type='hidden' name='nextWeekNumber' value='nextWeekNumber'><a
+            						href='ReservationViewAction'>'nextWeekNumber'</a></li></ul>
+            						</div>
+            						</s:form>"
+            	);
+            }
+		</script> -->
+
 		<div class="event-modal">
 			<header class="header">
 				<div class="content">
@@ -317,8 +318,9 @@
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 	<script>
-	if( !window.jQuery ) document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
-</script>
+		if (!window.jQuery)
+			document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
+	</script>
 	<script src="./js/main.js"></script>
 	<!-- Resource jQuery -->
 </body>
