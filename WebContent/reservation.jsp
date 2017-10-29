@@ -254,14 +254,14 @@
 		</div>
 
 		<s:form action="ReservationViewAction">
-		</s:form>
+		
 		<div class="pager">
 			<ul>
 				<li><input type="hidden" name="nextWeekNumber" value=1><a
 					href="ReservationViewAction">1</a></li>
 			</ul>
 			<ul>
-				<li><input type="hidden" name="nextWeekNumber" value=2><a
+				<li><input type="hidden" name="nextWeekNumber" value="2"><a
 					href="ReservationViewAction">2</a></li>
 			</ul>
 			<ul>
@@ -277,6 +277,7 @@
 					href="ReservationViewAction">5</a></li>
 			</ul>
 		</div>
+		</s:form>
 		<!-- <script type="text/javascript">
 		var nextWeekNumber =1;
             while(nextWeekNumber < 14){

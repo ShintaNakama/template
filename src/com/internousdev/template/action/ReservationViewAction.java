@@ -65,7 +65,7 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 	/**
 	 * 次の週へ行くたびに１をたすための数
 	 */
-	private int nextWeekNumber =1;
+	public int nextWeekNumber =1;
 	/**
 	 * 次の週の初めの日(String)
 	 */
