@@ -287,8 +287,7 @@
 
 			<div class="body">
 				<div class="event-info">
-				<h1>ご予約詳細</h1>
-				<h3 class="event-name"></h3>
+				
 				</div>
 				<div class="body-bg"></div>
 			</div>

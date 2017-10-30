@@ -114,7 +114,7 @@ jQuery(document).ready(function($){
 		this.modalHeader.find('.event-name').text(event.find('.event-name').text());
 		this.modalHeader.find('.event-date').text(event.find('.event-date').text());
 		//追加
-		this.modalBody.find('.event-info').text(event.find('.event-name').text());
+		this.modalBody.find('.event-info').text(event.find('.event-date').text());
 		//追加終了
 		this.modal.attr('data-event', event.parent().attr('data-event'));
 
