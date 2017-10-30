@@ -1,8 +1,9 @@
 .reservationTable {
 	width: 900px;
 	margin-top: 40px;
-	margin-left: 200px;
+	margin-left: 150px;
 	font-size: 15px;
+	height: 50px;
 }
 
 .reservationTable table {
@@ -18,7 +19,8 @@
 
 .btn {
 	float: right;
-	margin-right: 100px;
+	margin-top : -30px;
+	margin-right: -200px;
 	margin-bottom: 20px;
 	display: inline-block;
 	width: 150px;
@@ -32,8 +34,12 @@
 }
 .pager {
 	display: inline-block;
-    overflow: hidden;
-    margin-left: 50px;
+    width : 700px;
+    float: left;
+    margin-top: 20px;
+    margin-left: -350px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .pager ul {
@@ -41,12 +47,13 @@
     position: relative;
     left: 50%;
     float: left;
+    padding: 1px;
 }
 
 .pager ul li {
     margin: 0 1px;
     position: relative;
-    left: -50%;
+    /*left: -50%;*/
     float: left;
 }
 

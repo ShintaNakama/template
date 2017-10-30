@@ -26,14 +26,14 @@ public class ReservationViewDAO {
 
 	public ArrayList<String> display(String nextWeekFarstDay){
 
-		String sql = "SELECT reservation_date FROM reservation_info where reservation_date between ? AND now() + INTERVAL 7 DAY GROUP BY reservation_date";
+		String sql = "SELECT reservation_date FROM reservation_info where reservation_date between ? AND ? + INTERVAL 7 DAY GROUP BY reservation_date";
 		ArrayList<String> reservationSearch = new ArrayList<>();
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			System.out.println(nextWeekFarstDay);
 			preparedStatement.setString(1, nextWeekFarstDay);
-			//preparedStatement.setString(2, reservationName);
+			preparedStatement.setString(2, nextWeekFarstDay);
 			//preparedStatement.setString(3, reservationDate);
 			//preparedStatement.setString(4, reservationStart);
 			//preparedStatement.setString(5, reservationEnd);

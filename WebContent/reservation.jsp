@@ -21,7 +21,7 @@
 	<section class="reservationTable">
 		<s:form action="ReservationInputAction">
 			<table>
-				<th>予約日</th>
+				<th>ご予約希望日</th>
 				<td><input type="date" name="reservationDate" required
 					style="color: black; width: 12em; font-family: sans-serif; text-align: center;"
 					value=" "></td>
@@ -37,6 +37,29 @@
 			<button class="btn" value="ReservationInputAction"
 				class="reservationButton">ご予約</button>
 		</s:form>
+
+		<div class="pager">
+			<ul>
+				<li><s:url id="url" action="ReservationViewAction"><s:param name="nextWeekNumber" value="nextWeekNumber - 1"/></s:url><s:a href="%{url}">週を戻る</s:a></li>
+			</ul>
+			<ul>
+				<li><s:url id="url" action="ReservationViewAction"><s:param name="nextWeekNumber" value="0"/></s:url><s:a href="%{url}">今週</s:a></li>
+			</ul>
+			<ul>
+				<li><s:url id="url" action="ReservationViewAction"><s:param name="nextWeekNumber" value="1"/></s:url><s:a href="%{url}">来週</s:a></li>
+			</ul>
+			<ul>
+				<li><s:url id="url" action="ReservationViewAction"><s:param name="nextWeekNumber" value="2"/></s:url><s:a href="%{url}">第3週</s:a></li>
+			</ul>
+			<ul>
+				<li><s:url id="url" action="ReservationViewAction"><s:param name="nextWeekNumber" value="3"/></s:url><s:a href="%{url}">第4週</s:a></li>
+			</ul>
+			<ul>
+
+				<li><s:url id="url" action="ReservationViewAction"><s:param name="nextWeekNumber" value="nextWeekNumber + 1"></s:param></s:url><s:a href="%{url}">週を進む</s:a></li>
+			</ul>
+		</div>
+
 	</section>
 	<div class="cd-schedule loading">
 		<div class="timeline">
@@ -85,7 +108,7 @@
 							<s:iterator value="reservationList1">
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
-									data-end="<s:property value="reservationEnd"/>" data-content=""
+									data-end="<s:property value="reservationEnd"/>" data-content="<s:property value="reservationName" />"
 									data-event="event-1"><a href="#0"> <em
 										class="event-name"><s:property value="reservationName" /></em>
 								</a></li>
@@ -252,48 +275,6 @@
 			</ul>
 
 		</div>
-
-		<s:form action="ReservationViewAction">
-		
-		<div class="pager">
-			<ul>
-				<li><input type="hidden" name="nextWeekNumber" value=1><a
-					href="ReservationViewAction">1</a></li>
-			</ul>
-			<ul>
-				<li><input type="hidden" name="nextWeekNumber" value="2"><a
-					href="ReservationViewAction">2</a></li>
-			</ul>
-			<ul>
-				<li><input type="hidden" name="nextWeekNumber" value=3><a
-					href="ReservationViewAction">3</a></li>
-			</ul>
-			<ul>
-				<li><input type="hidden" name="nextWeekNumber" value=4><a
-					href="ReservationViewAction">4</a></li>
-			</ul>
-			<ul>
-				<li><input type="hidden" name="nextWeekNumber" value=5><a
-					href="ReservationViewAction">5</a></li>
-			</ul>
-		</div>
-		</s:form>
-		<!-- <script type="text/javascript">
-		var nextWeekNumber =1;
-            while(nextWeekNumber < 14){
-            	nextWeekNumber++;
-            	document.write(
-            			"<s:form action='ReservationViewAction'>
-            			<div class='pager'>
-            				<ul>
-            					<li><input type='hidden' name='nextWeekNumber' value='nextWeekNumber'><a
-            						href='ReservationViewAction'>'nextWeekNumber'</a></li></ul>
-            						</div>
-            						</s:form>"
-            	);
-            }
-		</script> -->
-
 		<div class="event-modal">
 			<header class="header">
 				<div class="content">
@@ -305,7 +286,10 @@
 			</header>
 
 			<div class="body">
-				<div class="event-info"></div>
+				<div class="event-info">
+				<h1>ご予約詳細</h1>
+				<h3 class="event-name"></h3>
+				</div>
 				<div class="body-bg"></div>
 			</div>
 
