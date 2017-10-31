@@ -14,7 +14,9 @@
 	</header>
 
 	<div class="main_container">
-		<img class="top_image" src="./img/fut02.jpg">
+        <div class="title">
+        <h1>InternousFutCort</h1>
+        </div>
 	</div>
 	<footer> </footer>
 

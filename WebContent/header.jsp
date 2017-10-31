@@ -13,7 +13,7 @@
 	<!-- ログイン時 -->
 	<s:if test="#session.loginFlg !=null">
 		<section class="header">
-			<div class="header-left">InternousFutCort</div>
+			<div class="header-left"><a href='<s:url action="GoTopAction" />'>InternousFutCort</a></div>
 			<div class="header-right">
 				<a href='<s:url action="GoTopAction" />'>トップ</a>
 				<a href="cortInfo.jsp">コート詳細</a>
@@ -24,10 +24,10 @@
 	<!-- 未ログイン時 -->
 	<s:else>
 		<section class="header">
-			<div class="header-left">InternousFutCort</div>
+			<div class="header-left"><a href='<s:url action="GoTopAction" />'>InternousFutCort</a></div>
 			<div class="header-right">
 				<a href='<s:url action="GoTopAction" />'>トップ</a>
-				<a href="cortInfo.jsp">コート詳細</a> 
+				<a href="cortInfo.jsp">コート詳細</a>
 				<a href='<s:url action="LoginAction" />'>ログイン</a>
 				<a href='<s:url action="UserCreateAction" />'>新規ユーザ登録</a>
 			</div>
