@@ -386,6 +386,8 @@ Main Components
   line-height: 1.4;
   height: 100%;
   overflow: hidden;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
 .cd-schedule .event-modal .event-info > div {

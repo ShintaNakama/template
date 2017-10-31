@@ -72,6 +72,12 @@
             <result name="error">error.jsp</result>
             <result name="login">login.jsp</result>
         </action>
+        <!-- ReservationMoreDetailAction-->
+        <action name="ReservationMoreDetailAction" class="com.internousdev.template.action.ReservationMoreDetailAction" method="execute">
+            <result name="success">info.jsp</result>
+            <result name="error">error.jsp</result>
+            <result name="login">login.jsp</result>
+        </action>
         <!-- ReservationInputAction -->
         <action name="ReservationInputAction" class="com.internousdev.template.action.ReservationInputAction" method="execute">
             <result name="success">settlement.jsp</result>

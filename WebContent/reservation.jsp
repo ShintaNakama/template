@@ -26,11 +26,28 @@
 					style="color: black; width: 12em; font-family: sans-serif; text-align: center;"
 					value=" "></td>
 				<th>予約開始時間</th>
-				<td><input type="time" name="reservationStart" min="08:00"
-					max="21:00" required></td>
+				<td><input type="time" name="reservationStart" list="data1"
+					min="08:00" max="21:00" required></td>
+				<datalist id="data1">
+					<option value="08:00"></option>
+					<option value="09:00"></option>
+					<option value="10:00"></option>
+					<option value="11:00"></option>
+					<option value="12:00"></option>
+					<option value="13:00"></option>
+					<option value="14:00"></option>
+					<option value="15:00"></option>
+					<option value="16:00"></option>
+					<option value="17:00"></option>
+					<option value="18:00"></option>
+					<option value="19:00"></option>
+					<option value="20:00"></option>
+					<option value="21:00"></option>
+					<option value="22:00"></option>
+				</datalist>
 				<th>終了時間</th>
-				<td><input type="time" name="reservationEnd" min="09:00"
-					max="22:00" required></td>
+				<td><input type="time" name="reservationEnd" list="data1"
+					min="09:00" max="22:00" required></td>
 				<th>予約者・団体名</th>
 				<td><input type="text" name="reservationName" required></td>
 			</table>
@@ -40,23 +57,41 @@
 
 		<div class="pager">
 			<ul>
-				<li><s:url id="url" action="ReservationViewAction"><s:param name="nextWeekNumber" value="nextWeekNumber - 1"/></s:url><s:a href="%{url}">週を戻る</s:a></li>
+				<li><s:url id="url" action="ReservationViewAction">
+						<s:param name="nextWeekNumber" value="nextWeekNumber - 1" />
+					</s:url>
+					<s:a href="%{url}">週を戻る</s:a></li>
 			</ul>
 			<ul>
-				<li><s:url id="url" action="ReservationViewAction"><s:param name="nextWeekNumber" value="0"/></s:url><s:a href="%{url}">今週</s:a></li>
+				<li><s:url id="url" action="ReservationViewAction">
+						<s:param name="nextWeekNumber" value="0" />
+					</s:url>
+					<s:a href="%{url}">今週</s:a></li>
 			</ul>
 			<ul>
-				<li><s:url id="url" action="ReservationViewAction"><s:param name="nextWeekNumber" value="1"/></s:url><s:a href="%{url}">来週</s:a></li>
+				<li><s:url id="url" action="ReservationViewAction">
+						<s:param name="nextWeekNumber" value="1" />
+					</s:url>
+					<s:a href="%{url}">来週</s:a></li>
 			</ul>
 			<ul>
-				<li><s:url id="url" action="ReservationViewAction"><s:param name="nextWeekNumber" value="2"/></s:url><s:a href="%{url}">第3週</s:a></li>
+				<li><s:url id="url" action="ReservationViewAction">
+						<s:param name="nextWeekNumber" value="2" />
+					</s:url>
+					<s:a href="%{url}">第3週</s:a></li>
 			</ul>
 			<ul>
-				<li><s:url id="url" action="ReservationViewAction"><s:param name="nextWeekNumber" value="3"/></s:url><s:a href="%{url}">第4週</s:a></li>
+				<li><s:url id="url" action="ReservationViewAction">
+						<s:param name="nextWeekNumber" value="3" />
+					</s:url>
+					<s:a href="%{url}">第4週</s:a></li>
 			</ul>
 			<ul>
 
-				<li><s:url id="url" action="ReservationViewAction"><s:param name="nextWeekNumber" value="nextWeekNumber + 1"></s:param></s:url><s:a href="%{url}">週を進む</s:a></li>
+				<li><s:url id="url" action="ReservationViewAction">
+						<s:param name="nextWeekNumber" value="nextWeekNumber + 1"></s:param>
+					</s:url>
+					<s:a href="%{url}">週を進む</s:a></li>
 			</ul>
 		</div>
 
@@ -108,7 +143,7 @@
 							<s:iterator value="reservationList1">
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
-									data-end="<s:property value="reservationEnd"/>" data-content="<s:property value="reservationName" />"
+									data-end="<s:property value="reservationEnd"/>" data-content="info"
 									data-event="event-1"><a href="#0"> <em
 										class="event-name"><s:property value="reservationName" /></em>
 								</a></li>
@@ -132,7 +167,7 @@
 							<s:iterator value="reservationList2">
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
-									data-end="<s:property value="reservationEnd"/>" data-content=""
+									data-end="<s:property value="reservationEnd"/>" data-content="info"
 									data-event="event-1"><a href="#0"> <em
 										class="event-name"><s:property value="reservationName" /></em>
 								</a></li>
@@ -157,7 +192,7 @@
 							<s:iterator value="reservationList3">
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
-									data-end="<s:property value="reservationEnd"/>" data-content=""
+									data-end="<s:property value="reservationEnd"/>" data-content="info"
 									data-event="event-1"><a href="#0"><em
 										class="event-name"><s:property value="reservationName" /></em>
 								</a></li>
@@ -182,8 +217,8 @@
 							<s:iterator value="reservationList4">
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
-									data-end="<s:property value="reservationEnd"/>" data-content=""
-									data-event="event-1"><a href="reservationData.jsp"> <em
+									data-end="<s:property value="reservationEnd"/>" data-content="info"
+									data-event="event-1"><a href="<s:url action="ReservationMoreDetailAction" />"> <em
 										class="event-name"><s:property value="reservationName" /></em>
 								</a></li>
 							</s:iterator>
@@ -207,7 +242,7 @@
 							<s:iterator value="reservationList5">
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
-									data-end="<s:property value="reservationEnd"/>" data-content=""
+									data-end="<s:property value="reservationEnd"/>" data-content="info"
 									data-event="event-1"><a href="#0"> <em
 										class="event-name"><s:property value="reservationName" /></em>
 								</a></li>
@@ -232,7 +267,7 @@
 							<s:iterator value="reservationList6">
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
-									data-end="<s:property value="reservationEnd"/>" data-content=""
+									data-end="<s:property value="reservationEnd"/>" data-content="info"
 									data-event="event-1"><a href="#0"> <em
 										class="event-name"><s:property value="reservationName" /></em>
 								</a></li>
@@ -257,7 +292,7 @@
 							<s:iterator value="reservationList7">
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
-									data-end="<s:property value="reservationEnd"/>" data-content=""
+									data-end="<s:property value="reservationEnd"/>" data-content="info"
 									data-event="event-1"><a href="#0"> <em
 										class="event-name"><s:property value="reservationName" /></em>
 								</a></li>
@@ -286,9 +321,9 @@
 			</header>
 
 			<div class="body">
-				<div class="event-info">
-				
-				</div>
+
+				<div class="event-info"></div>
+
 				<div class="body-bg"></div>
 			</div>
 

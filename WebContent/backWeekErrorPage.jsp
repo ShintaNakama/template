@@ -8,7 +8,7 @@
 <title>m(_ _)m Error Page... OTL</title>
 </head>
 <body>
-<h1>エラーが発生しました。</h1>
+<h1>先週にはいけません・・・</h1>
 <p>恐れ入りますが、<a href='<s:url action="LoginAction" />'>ログイン</a>からやり直してください。</p>
 </body>
 </html>

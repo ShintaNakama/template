@@ -3,6 +3,10 @@
  */
 package com.internousdev.template.action;
 
+/**
+ * @author internousdev
+ *
+ */
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -14,10 +18,8 @@ import com.internousdev.template.dao.ReservationViewDAO;
 import com.internousdev.template.dto.ReservationDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-/**
- * @author internousdev 予約状況表示アクション
- */
-public class ReservationViewAction extends ActionSupport implements SessionAware {
+public class ReservationMoreDetailAction extends ActionSupport implements SessionAware {
+
 	/**
 	 * 生成されたシリアルナンバー
 	 */
@@ -449,3 +451,4 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 	}
 
 }
+

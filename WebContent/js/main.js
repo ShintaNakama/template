@@ -114,12 +114,13 @@ jQuery(document).ready(function($){
 		this.modalHeader.find('.event-name').text(event.find('.event-name').text());
 		this.modalHeader.find('.event-date').text(event.find('.event-date').text());
 		//追加
-		this.modalBody.find('.event-info').text(event.find('.event-date').text());
+		//this.modalBody.find('.event-info').text(event.find('.event-name','.event-date').text());
+		//this.modalBody.find('.event-info').text(event.find('.event-date').text());
 		//追加終了
 		this.modal.attr('data-event', event.parent().attr('data-event'));
 
 		//update event content
-		this.modalBody.find('.event-info').load(event.parent().attr('data-content')+'.html .event-info > *', function(data){
+		this.modalBody.find('.event-info').load(event.parent().attr('data-content')+'.jsp .event-info > *', function(data){
 			//once the event content has been loaded
 			self.element.addClass('content-loaded');
 		});
