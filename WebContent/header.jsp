@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="./css/header.css" type="text/css">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./css/header2.css" type="text/css">
 <title>Header</title>
 </head>
 <body>
