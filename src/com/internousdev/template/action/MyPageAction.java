@@ -15,6 +15,11 @@ import com.opensymphony.xwork2.ActionSupport;
 public class MyPageAction extends ActionSupport implements SessionAware{
 
 	/**
+	 * 　生成されたシリアルナンバー
+	 */
+	private static final long serialVersionUID = -3316901123677984300L;
+
+	/**
 	 * ログイン情報を格納
 	 */
 	public Map<String, Object> loginInfoMap = new HashMap<>();

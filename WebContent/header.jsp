@@ -17,6 +17,7 @@
 			<div class="header-right">
 				<a href='<s:url action="GoTopAction" />'>トップ</a>
 				<a href="cortInfo.jsp">コート詳細</a>
+				<a href='<s:url action="MyPageAction" />'>マイページ</a>
 				<a href='<s:url action="LogoutAction" />'>ログアウト</a>
 			</div>
 		</section>
