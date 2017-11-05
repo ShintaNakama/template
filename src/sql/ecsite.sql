@@ -15,14 +15,17 @@ insert_date datetime,
 updated_date datetime
 );
 
+drop table if exists reservation_info;
+
 create table reservation_info(
 reservation_number int(10) primary key auto_increment,
 reservation_name varchar(50),
-reservation_date timestamp default 0,
+reservation_date timestamp,
 reservation_start varchar(10),/*予約開始時間*/
 reservation_end varchar(10),/*予約終了時間*/
-update_date timestamp default current_timestamp on update current_timestamp,
-delete_date timestamp
+reservation_login_user varchar(50),
+update_date datetime default current_timestamp on update current_timestamp,
+delete_date datetime
 );
 
 drop table if exists item_info_transaction;

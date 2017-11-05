@@ -23,13 +23,14 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	 * ログイン情報を格納
 	 */
 	public Map<String, Object> loginInfoMap = new HashMap<>();
-	
-	public Map<String, Object> historyList = new HashMap<>();
-
 	/**
 	 * マイページ情報取得DAO
 	 */
 	public MyPageDAO myPageDAO = new MyPageDAO();
+	/**
+	 * マイページ情報格納DTO
+	 */
+	public MyPageDTO myPageDTO = new MyPageDTO();
 
 	/**
 	 * マイページ情報格納DTO
@@ -49,55 +50,23 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	public String message = null;
 
 	/**
-	 * 商品履歴取得メソッド
+	 * MyPage情報取得メソッド
 	 *
 	 * @author internous
 	 */
 	public String execute() throws SQLException {
-
+		String result = ERROR;
 		if (!loginInfoMap.containsKey("id")) {
 			return ERROR;
 		}
-
-		// 商品履歴を削除しない場合
-		if(deleteFlg == null) {
-			String item_transaction_id = loginInfoMap.get("id").toString();
-			String user_master_id = loginInfoMap.get("login_user_id").toString();
-
-			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
-
-			Iterator<MyPageDTO> iterator = myPageList.iterator();
-			if (!(iterator.hasNext())) {
-				myPageList = null;
-			}
-		// 商品履歴を削除する場合
-		} else if(deleteFlg.equals("1")) {
-			delete();
-		}
-
+        String myPageId = loginInfoMap.get("login_user_id").toString();
+        myPageList = myPageDAO.getMyPageUserInfo(myPageId);
+		
 		result = SUCCESS;
 		return result;
 	}
 
-	/**
-	 * 商品履歴削除
-	 *
-	 * @throws SQLException
-	 */
-	public void delete() throws SQLException {
-
-		String item_transaction_id = loginInfoMap.get("id").toString();
-		String user_master_id = loginInfoMap.get("login_user_id").toString();
-
-		int res = myPageDAO.buyItemHistoryDelete(item_transaction_id, user_master_id);
-
-		if(res > 0) {
-			myPageList = null;
-			message = "商品情報を正しく削除しました。";
-		} else if(res == 0) {
-			message = "商品情報の削除に失敗しました。";
-		}
-	}
+	
 
 
 

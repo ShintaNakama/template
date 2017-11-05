@@ -89,17 +89,6 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 
 	ArrayList<String> reservationSearch = new ArrayList<>();
 
-	private String ssss;
-
-
-
-	public String getSsss() {
-		return ssss;
-	}
-
-	public void setSsss(String ssss) {
-		this.ssss = ssss;
-	}
 
 	/**
 	 * 実行メソッド
@@ -120,19 +109,13 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 			 * nextWeekFarstDayから7日間の予約日リスト（reservationSearchList)
 			 * を取得しその内容量をsizeに格納
 			 */
-			/*nextWeekNumberがマイナスにならないように*/
+			/*jsp側で週を戻る場合、nextWeekNumberがマイナスにならないように*/
             if(nextWeekNumber == -1){
             	nextWeekNumber = 0;
             }
 
 			for (int i = 0; i < 7; i++) {
-				/**
-				 * Calendar cal = Calendar.getInstance();
-				 * cal.add(Calendar.MONTH, 1); cal.add(Calendar.DATE, i); int
-				 * year = cal.get((Calendar.YEAR)); int month =
-				 * cal.get((Calendar.MONTH)); int date = cal.get(Calendar.DATE);
-				 */
-
+				
 				/* nextWeekNumberに合わせてaddDayメソッドを呼び出しDayリストに格納 */
 				switch (nextWeekNumber) {
 				case 0:
@@ -447,5 +430,6 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 	public void setNextWeekFarstDay(String nextWeekFarstDay) {
 		this.nextWeekFarstDay = nextWeekFarstDay;
 	}
+	
 
 }

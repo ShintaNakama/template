@@ -51,6 +51,8 @@
 				<th>予約者・団体名</th>
 				<td><input type="text" name="reservationName" required></td>
 			</table>
+			<input type=hidden name="reservationLoginUser"
+			value="<s:property value="login_user_id"/>">
 			<button class="btn" value="ReservationInputAction"
 				class="reservationButton">ご予約</button>
 		</s:form>

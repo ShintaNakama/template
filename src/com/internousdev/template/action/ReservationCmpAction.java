@@ -55,6 +55,10 @@ public class ReservationCmpAction extends ActionSupport implements SessionAware 
    */
   private String reservationName;
   /**
+   * ログインユーザ名
+   */
+  private String reservationLoginUser;
+/**
    * クレジットカード種別
    */
   private String card;
@@ -135,7 +139,7 @@ public class ReservationCmpAction extends ActionSupport implements SessionAware 
       // 登録用のDAOを呼び出して登録
       InsertReservationDAO dao = new InsertReservationDAO();
       try {
-		if(dao.InsertReservation(reservationName, reservationDate, reservationStart, reservationEnd) >= 0){
+		if(dao.InsertReservation(reservationName, reservationDate, reservationStart, reservationEnd, reservationLoginUser) >= 0){
 			  result = SUCCESS;
 		  } else {
 			  result = ERROR;
@@ -232,6 +236,18 @@ public class ReservationCmpAction extends ActionSupport implements SessionAware 
   public void setReservationName(String reservationName){
 	  this.reservationName = reservationName;
   }
+  /**
+   * ログインユーザ名取得メソッド
+   */
+  public String getReservationLoginUser() {
+		return reservationLoginUser;
+	}
+  /**
+   * ログインユーザ名登録メソッド
+   */
+  public void setReservationLoginUser(String reservationLoginUser) {
+		this.reservationLoginUser = reservationLoginUser;
+	}
   /**
    * クレジットカード種別取得メソッド
    */
@@ -335,5 +351,6 @@ public class ReservationCmpAction extends ActionSupport implements SessionAware 
   public void setSession(Map<String, Object> sessionMap){
  	 this.sessionMap = sessionMap;
   }
+  
 
 }

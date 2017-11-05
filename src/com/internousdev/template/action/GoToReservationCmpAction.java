@@ -40,6 +40,10 @@ public class GoToReservationCmpAction extends ActionSupport implements SessionAw
    */
   private String reservationName;
   /**
+   * ログインユーザ名
+   */
+  private String reservationLoginUser;
+  /**
    * 支払い方法
    */
   private String pay;
@@ -112,7 +116,11 @@ public class GoToReservationCmpAction extends ActionSupport implements SessionAw
 	   * セッションから予約者名を取得する
 	   */
 	  reservationName = (String) sessionMap.get("ReservationName");
-
+      
+	  /**
+	   * セッションからログインユーザ名を取得する
+	   */
+	  reservationLoginUser = (String) sessionMap.get("ReservationLoginUser");
 	  /**
 	   * クレジット有効期限日設定
 	   */
@@ -243,12 +251,22 @@ public class GoToReservationCmpAction extends ActionSupport implements SessionAw
 	  this.reservationName = reservationName;
   }
   /**
+   * ログインユーザ名取得メソッド
+   */
+  public String getReservationLoginUser() {
+		return reservationLoginUser;
+	}
+  public void setReservationLoginUser(String reservationLoginUser) {
+		this.reservationLoginUser = reservationLoginUser;
+	}
+  /**
    * 支払い方法取得メソッド
    */
   public String getPay(){
 	  return pay;
   }
-  /**
+  
+/**
    * 支払い方法登録メソッド
    */
   public void setPay(String pay){

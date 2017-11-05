@@ -23,7 +23,7 @@ public class ReservationInputAction extends ActionSupport implements SessionAwar
   /**
    * 予約番号
    */
-  //private int reservationNumber;
+  private int reservationNumber;
 /**
    * 予約日
    */
@@ -41,6 +41,10 @@ public class ReservationInputAction extends ActionSupport implements SessionAwar
    */
   private String reservationName;
   /**
+   * ログインユーザ名
+   */
+  private String reservationLoginUser;
+  /**
    * セッション情報
    */
   private Map<String, Object> sessionMap;
@@ -49,9 +53,9 @@ public class ReservationInputAction extends ActionSupport implements SessionAwar
    */
   public String execute(){
 	  /*
-	   * セッションに予約番号を保存する(しない）
+	   * セッションに予約番号を保存する
 	   */
-	  //sessionMap.put("ReservationNumber", reservationNumber);
+	  sessionMap.put("ReservationNumber", reservationNumber);
 	  /*
 	   * セッションに予約日を保存する
 	   */
@@ -68,7 +72,10 @@ public class ReservationInputAction extends ActionSupport implements SessionAwar
 	   * セッションに予約者名を保存する
 	   */
 	  sessionMap.put("ReservationName", reservationName);
-
+      /*
+       * セッションにログインユーザ名を保存する
+       */
+	  sessionMap.put("ReservationLoginUser", reservationLoginUser);
 
 
 	  LocalTime startTime =  LocalTime.parse(reservationStart);
@@ -156,6 +163,16 @@ public class ReservationInputAction extends ActionSupport implements SessionAwar
 	  this.reservationName = reservationName;
   }
   /**
+   * ログインユーザ取得メソッド
+   * @return
+   */
+  public String getReservationLoginUser() {
+	return reservationLoginUser;
+  }
+  public void setReservationLoginUser(String reservationLoginUser) {
+	this.reservationLoginUser = reservationLoginUser;
+  }
+/**
    * セッション情報取得メソッド
    */
   //public Map<String, Object> getSessionMap(){

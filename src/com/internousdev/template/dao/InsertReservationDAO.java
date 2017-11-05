@@ -20,17 +20,19 @@ public class InsertReservationDAO {
 	//private ReservationDTO reservationDTO = new ReservationDTO();
 	//データベースへの予約内容登録
 
-	public int InsertReservation(String reservationName, String reservationDate, String reservationStart, String reservationEnd) throws SQLException {
+	public int InsertReservation(String reservationName, String reservationDate, String reservationStart, String reservationEnd, String reservationLoginUser) throws SQLException {
 
 		int count = 0;
 		//データベースへの予約内容登録
-	    String reservationSql ="INSERT INTO reservation_info (reservation_name, reservation_date, reservation_start, reservation_end) VALUES(?,?,?,?)";
+	    String reservationSql ="INSERT INTO reservation_info (reservation_name, reservation_date, reservation_start, reservation_end, reservation_login_user) VALUES(?,?,?,?,?)";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(reservationSql);
+			//preparedStatement.setInt(1, reservationNumber);
 			preparedStatement.setString(1, reservationName);
 			preparedStatement.setString(2, reservationDate);
 			preparedStatement.setString(3, reservationStart);
 			preparedStatement.setString(4, reservationEnd);
+			preparedStatement.setString(5, reservationLoginUser);
 
 
 			count =  preparedStatement.executeUpdate();

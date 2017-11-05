@@ -6,6 +6,8 @@ package com.internousdev.template.util;
 /**
  * @author internousdev
  * ページングの為の情報
+ * 　使っていないです。
+ * 
  */
 public class ReservationPager {
     private int num;
