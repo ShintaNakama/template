@@ -25,32 +25,21 @@ public class MyPageDAO {
 	 */
 	public ArrayList<MyPageDTO> getMyPageUserInfo(String myPageId) throws SQLException {
 		ArrayList<MyPageDTO> myPageDTO = new ArrayList<MyPageDTO>();
-	    MyPageDTO dto = new MyPageDTO();
+	    
 
-		String sql = "SELECT login_id, user_name FROM login_user_transaction WHERE login_id =?";
-		String sql2 = "SELECT * FROM reservation_info WHERE reservation_login_user =?";
+		String sql = "SELECT * FROM reservation_info WHERE reservation_login_user =?";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			PreparedStatement preparedStatement2 = connection.prepareStatement(sql2);
 			preparedStatement.setString(1, myPageId);
-			preparedStatement2.setString(1, myPageId);
 
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			while(resultSet.next()) {
-				
-				dto.setMyPageId(resultSet.getString("login_id"));
-				dto.setUserName(resultSet.getString("user_name"));
-				
-			}
-			ResultSet resultSet2 = preparedStatement2.executeQuery();
-
-			while(resultSet2.next()) {
-				
-				dto.setReservationName(resultSet2.getString("reservation_name"));
-				dto.setReservationDay(resultSet2.getString("reservation_date"));
-				dto.setReservationStart(resultSet2.getString("reservation_start"));
-				dto.setReservationEnd(resultSet2.getString("reservation_end"));
+				MyPageDTO dto = new MyPageDTO();
+				dto.setReservationName(resultSet.getString("reservation_name"));
+				dto.setReservationDay(resultSet.getString("reservation_date"));
+				dto.setReservationStart(resultSet.getString("reservation_start"));
+				dto.setReservationEnd(resultSet.getString("reservation_end"));
 				myPageDTO.add(dto);
 			}
 			

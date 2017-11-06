@@ -18,7 +18,10 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	 * 　生成されたシリアルナンバー
 	 */
 	private static final long serialVersionUID = -3316901123677984300L;
-
+    
+    private String myPageId;
+	
+	private String userName;
 	/**
 	 * ログイン情報を格納
 	 */
@@ -33,10 +36,13 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	public MyPageDTO myPageDTO = new MyPageDTO();
 
 	/**
-	 * マイページ情報格納リスト
+	 * マイページユーザ情報格納リスト
 	 */
-	public ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
-
+	public ArrayList<MyPageDTO> myPageUserList = new ArrayList<MyPageDTO>();
+    /**
+     * マイページ予約情報格納リスト
+     */
+	public ArrayList<MyPageDTO> myPageReservationList = new ArrayList<MyPageDTO>();
 	/**
 	 * 削除フラグ
 	 */
@@ -62,14 +68,40 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		}
 		/*ログインIDをmyPageIdに格納し、
 		 * myPageDAOからログインID、ユーザ名、予約情報を取得しmyPageListに格納*/
-        String myPageId = loginInfoMap.get("login_user_id").toString();
-        myPageList = myPageDAO.getMyPageUserInfo(myPageId);
+        myPageId = loginInfoMap.get("login_user_id").toString();
+        userName = loginInfoMap.get("login_user_name").toString();
+        myPageUserList = myPageDAO.getMyPageUserInfo(myPageId);
         
 		result = SUCCESS;
 		return result;
 	}
-
+    
 	
+	
+	public String getMyPageId() {
+		return myPageId;
+	}
+
+
+
+	public void setMyPageId(String myPageId) {
+		this.myPageId = myPageId;
+	}
+
+
+
+	public String getUserName() {
+		return userName;
+	}
+
+
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+
+
 	public String getDeleteFlg() {
 		return deleteFlg;
 	}

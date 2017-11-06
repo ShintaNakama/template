@@ -70,7 +70,6 @@
 		</div>
 		<div class="userInfo">
 			<table>
-				<s:iterator value="myPageList">
 					<tr>
 						<th scope="row">ログインID</th>
 						<td><s:property value="myPageId" /></td>
@@ -79,11 +78,10 @@
 						<th scope="row">ユーザー名</th>
 						<td><s:property value="userName" /></td>
 					</tr>
-				</s:iterator>
 			</table>
 		</div>
 		<div class="myReservation">
-			<s:if test="myPageList != null">
+			<s:if test="myPageUserList != null">
 				<h3>ご予約内容は以下になります。</h3>
 				<table>
 					<tr>
@@ -92,7 +90,7 @@
 						<th>開始時間</th>
 						<th>終了時間</th>
 					</tr>
-					<s:iterator value="myPageList">
+					<s:iterator value="myPageUserList">
 						<tr>
 							<td><s:property value="reservationName" /></td>
 							<td><s:property value="reservationDay" /></td>

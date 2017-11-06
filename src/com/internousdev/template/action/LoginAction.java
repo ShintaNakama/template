@@ -38,7 +38,11 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	 * ログインパスワード
 	 */
 	public String loginPassword;
-
+    
+	/**
+	 * ユーザ名
+	 */
+    public String userName;
 	/**
 	 * 処理結果を格納
 	 */
@@ -84,6 +88,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			// アイテム情報を取得
 			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
 			loginUserInfoMap.put("login_user_id",	loginDTO.getLoginId());
+			loginUserInfoMap.put("login_user_name",	loginDTO.getUserName());
 			loginUserInfoMap.put("id", buyItemDTO.getId());
 			loginUserInfoMap.put("buyItem_name", buyItemDTO.getItemName());
 			loginUserInfoMap.put("buyItem_price", buyItemDTO.getItemPrice());
