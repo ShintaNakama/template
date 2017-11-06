@@ -33,7 +33,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	public MyPageDTO myPageDTO = new MyPageDTO();
 
 	/**
-	 * マイページ情報格納DTO
+	 * マイページ情報格納リスト
 	 */
 	public ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
 
@@ -56,20 +56,20 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	 */
 	public String execute() throws SQLException {
 		String result = ERROR;
+		/*ログイン情報確認*/
 		if (!loginInfoMap.containsKey("id")) {
 			return ERROR;
 		}
+		/*ログインIDをmyPageIdに格納し、
+		 * myPageDAOからログインID、ユーザ名、予約情報を取得しmyPageListに格納*/
         String myPageId = loginInfoMap.get("login_user_id").toString();
         myPageList = myPageDAO.getMyPageUserInfo(myPageId);
-		
+        
 		result = SUCCESS;
 		return result;
 	}
 
 	
-
-
-
 	public String getDeleteFlg() {
 		return deleteFlg;
 	}

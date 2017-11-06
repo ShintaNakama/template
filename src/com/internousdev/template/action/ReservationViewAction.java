@@ -51,6 +51,10 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 	 */
 	private String reservationEnd;
 	/**
+	 * ログインユーザ名
+	 */
+ private String reservationLoginUser;
+	/**
 	 * 予約リスト(日）
 	 */
 	public ArrayList<ReservationDTO> reservationList1 = new ArrayList<>();
@@ -100,6 +104,10 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 		String result = ERROR;
 		/* ログイン中かチェック */
 		if (session.containsKey("loginFlg") == true) {
+			/**予約の際のログインID登録用にログインsessionからログインIDを格納
+			 * jspからinput hiddunで送る
+			 * */
+			reservationLoginUser = session.get("login_user_id").toString();
 
 			/* ReservationDAOを取得 */
 			ReservationViewDAO dao = new ReservationViewDAO();
@@ -234,7 +242,7 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 
 		nextWeekFarstDay = nextWeekFarstDay.plusWeeks(addWeek);
 		for (int d = 0; d < 7; d++) {
-			Day.add(nextWeekFarstDay.toString() + " 00:00:00.0");
+			Day.add(nextWeekFarstDay.toString());
 			nextWeekFarstDay = nextWeekFarstDay.plusDays(1);
 		}
 		return Day;
@@ -266,6 +274,14 @@ public class ReservationViewAction extends ActionSupport implements SessionAware
 
 	public void setLoginFlg(boolean loginFlg) {
 		this.loginFlg = loginFlg;
+	}
+	
+	public String getReservationLoginUser() {
+		return reservationLoginUser;
+	}
+
+	public void setReservationLoginUser(String reservationLoginUser) {
+		this.reservationLoginUser = reservationLoginUser;
 	}
 
 	@Override

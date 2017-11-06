@@ -55,6 +55,8 @@
 	</div>
 	<p>上記の内容でよろしいでしょうか？</p>
 	<form action="ReservationCmpAction">
+	<input type=hidden name="reservationLoginUser"
+			value="<s:property value="reservationLoginUser"/>">
 		<input type=hidden name="reservationDate"
 			value="<s:property value="reservationDate"/>"> <input
 			type=hidden name="reservationStart"
