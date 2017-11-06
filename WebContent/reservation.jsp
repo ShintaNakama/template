@@ -141,7 +141,7 @@
 						<span><s:property value="viewDayList[0]" /></span>
 					</div>
 					<ul>
-						<s:if test="reservationList1 != null">
+						<s:if test="reservationList1.isEmpty != true">
 							<s:iterator value="reservationList1">
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
@@ -165,7 +165,6 @@
 						<span><s:property value="viewDayList[1]" /></span>
 					</div>
 					<ul>
-						<s:if test="reservationList2 != null">
 							<s:iterator value="reservationList2">
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
@@ -174,14 +173,6 @@
 										class="event-name"><s:property value="reservationName" /></em>
 								</a></li>
 							</s:iterator>
-						</s:if>
-						<s:else>
-							<li class="single-event" data-start="<s:property value=""/>"
-								data-end="<s:property value=""/>" data-content=""
-								data-event="event-3"><a href="#0"> <em
-									class="event-name">予約無し</em>
-							</a>
-						</s:else>
 					</ul>
 				</li>
 
@@ -190,7 +181,6 @@
 						<span><s:property value="viewDayList[2]" /></span>
 					</div>
 					<ul>
-						<s:if test="reservationList3 != null">
 							<s:iterator value="reservationList3">
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
@@ -199,14 +189,6 @@
 										class="event-name"><s:property value="reservationName" /></em>
 								</a></li>
 							</s:iterator>
-						</s:if>
-						<s:else>
-							<li class="single-event" data-start="<s:property value=""/>"
-								data-end="<s:property value=""/>" data-content=""
-								data-event="event-3"><a href="#0"> <em
-									class="event-name">予約無し</em>
-							</a>
-						</s:else>
 					</ul>
 				</li>
 
@@ -215,7 +197,6 @@
 						<span><s:property value="viewDayList[3]" /></span>
 					</div>
 					<ul>
-						<s:if test="reservationList4 != null">
 							<s:iterator value="reservationList4">
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
@@ -224,14 +205,6 @@
 										class="event-name"><s:property value="reservationName" /></em>
 								</a></li>
 							</s:iterator>
-						</s:if>
-						<s:else>
-							<li class="single-event" data-start="<s:property value=""/>"
-								data-end="<s:property value=""/>" data-content=""
-								data-event="event-3"><a href="#0"> <em
-									class="event-name">予約無し</em>
-							</a>
-						</s:else>
 					</ul>
 				</li>
 
@@ -240,7 +213,6 @@
 						<span><s:property value="viewDayList[4]" /></span>
 					</div>
 					<ul>
-						<s:if test="reservationList5 != null">
 							<s:iterator value="reservationList5">
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
@@ -249,14 +221,6 @@
 										class="event-name"><s:property value="reservationName" /></em>
 								</a></li>
 							</s:iterator>
-						</s:if>
-						<s:else>
-							<li class="single-event" data-start="<s:property value=""/>"
-								data-end="<s:property value=""/>" data-content=""
-								data-event="event-3"><a href="#0"> <em
-									class="event-name">予約無し</em>
-							</a>
-						</s:else>
 					</ul>
 				</li>
 
@@ -265,7 +229,6 @@
 						<span><s:property value="viewDayList[5]" /></span>
 					</div>
 					<ul>
-						<s:if test="reservationList6 != null">
 							<s:iterator value="reservationList6">
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
@@ -274,14 +237,6 @@
 										class="event-name"><s:property value="reservationName" /></em>
 								</a></li>
 							</s:iterator>
-						</s:if>
-						<s:else>
-							<li class="single-event" data-start="<s:property value=""/>"
-								data-end="<s:property value=""/>" data-content=""
-								data-event="event-3"><a href="#0"> <em
-									class="event-name">予約無し</em>
-							</a>
-						</s:else>
 					</ul>
 				</li>
 
@@ -290,7 +245,6 @@
 						<span><s:property value="viewDayList[6]" /></span>
 					</div>
 					<ul>
-						<s:if test="reservationList7 != null">
 							<s:iterator value="reservationList7">
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
@@ -299,14 +253,6 @@
 										class="event-name"><s:property value="reservationName" /></em>
 								</a></li>
 							</s:iterator>
-						</s:if>
-						<s:else>
-							<li class="single-event" data-start="<s:property value=""/>"
-								data-end="<s:property value=""/>" data-content=""
-								data-event="event-3"><a href="#0"> <em
-									class="event-name">予約無し</em>
-							</a>
-						</s:else>
 					</ul>
 				</li>
 			</ul>

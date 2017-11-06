@@ -81,7 +81,7 @@
 			</table>
 		</div>
 		<div class="myReservation">
-			<s:if test="myPageUserList != null">
+			<s:if test="myPageUserList.isEmpty != true">
 				<h3>ご予約内容は以下になります。</h3>
 				<table>
 					<tr>
