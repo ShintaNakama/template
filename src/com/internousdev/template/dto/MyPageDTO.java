@@ -6,6 +6,8 @@ public class MyPageDTO {
 	
 	public String userName;
 	
+	public String reservationNumber;
+	
 	public String reservationName;
 	
 	public String reservationDay;
@@ -27,11 +29,19 @@ public class MyPageDTO {
 	public String getUserName() {
 		return userName;
 	}
-
+	
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
 
+	public String getReservationNumber() {
+		return reservationNumber;
+	}
+
+	public void setReservationNumber(String reservationNumber) {
+		this.reservationNumber = reservationNumber;
+	}
+	
 	public String getReservationName() {
 		return reservationName;
 	}

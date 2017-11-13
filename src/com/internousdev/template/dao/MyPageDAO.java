@@ -36,6 +36,7 @@ public class MyPageDAO {
 
 			while(resultSet.next()) {
 				MyPageDTO dto = new MyPageDTO();
+				dto.setReservationNumber(resultSet.getString("reservation_number"));
 				dto.setReservationName(resultSet.getString("reservation_name"));
 				dto.setReservationDay(resultSet.getString("reservation_date"));
 				dto.setReservationStart(resultSet.getString("reservation_start"));

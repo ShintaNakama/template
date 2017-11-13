@@ -86,17 +86,21 @@
 				<h3>ご予約内容は以下になります。</h3>
 				<table>
 					<tr>
+					    <th>予約番号</th>
 						<th>予約名</th>
 						<th>予約日</th>
 						<th>開始時間</th>
 						<th>終了時間</th>
+						<th>予約削除</th>
 					</tr>
 					<s:iterator value="myPageUserList">
 						<tr>
+							<td><s:property value="reservationNumber" /></td>
 							<td><s:property value="reservationName" /></td>
 							<td><s:property value="reservationDay" /></td>
 							<td><s:property value="reservationStart" /></td>
 							<td><s:property value="reservationEnd" /></td>
+							<td><input type="submit" style="cursor:pointer" name="deleteFlg" value="予約削除" ><input type="hidden" name="deleteFlg" value="1"></td>
 						</tr>
 					</s:iterator>
 				</table>

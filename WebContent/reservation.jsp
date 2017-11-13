@@ -51,10 +51,10 @@
 				<th>予約者・団体名</th>
 				<td><input type="text" name="reservationName" required></td>
 			</table>
+			
+			<button class="btn" type="submit" style="cursor:pointer" value="ReservationInputAction">ご予約</button>
 			<input type=hidden name="reservationLoginUser"
 				value="<s:property value="reservationLoginUser"/>">
-			<button class="btn" value="ReservationInputAction"
-				class="reservationButton">ご予約</button>
 		</s:form>
 
 		<div class="pager">
