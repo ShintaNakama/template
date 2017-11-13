@@ -52,7 +52,7 @@
 				<td><input type="text" name="reservationName" required></td>
 			</table>
 			<input type=hidden name="reservationLoginUser"
-			value="<s:property value="reservationLoginUser"/>">
+				value="<s:property value="reservationLoginUser"/>">
 			<button class="btn" value="ReservationInputAction"
 				class="reservationButton">ご予約</button>
 		</s:form>
@@ -61,39 +61,33 @@
 			<ul>
 				<li><s:url id="url" action="ReservationViewAction">
 						<s:param name="nextWeekNumber" value="nextWeekNumber - 1" />
-					</s:url>
-					<s:a href="%{url}">週を戻る</s:a></li>
+					</s:url> <s:a href="%{url}">週を戻る</s:a></li>
 			</ul>
 			<ul>
 				<li><s:url id="url" action="ReservationViewAction">
 						<s:param name="nextWeekNumber" value="0" />
-					</s:url>
-					<s:a href="%{url}">今週</s:a></li>
+					</s:url> <s:a href="%{url}">今週</s:a></li>
 			</ul>
 			<ul>
 				<li><s:url id="url" action="ReservationViewAction">
 						<s:param name="nextWeekNumber" value="1" />
-					</s:url>
-					<s:a href="%{url}">来週</s:a></li>
+					</s:url> <s:a href="%{url}">来週</s:a></li>
 			</ul>
 			<ul>
 				<li><s:url id="url" action="ReservationViewAction">
 						<s:param name="nextWeekNumber" value="2" />
-					</s:url>
-					<s:a href="%{url}">第3週</s:a></li>
+					</s:url> <s:a href="%{url}">第3週</s:a></li>
 			</ul>
 			<ul>
 				<li><s:url id="url" action="ReservationViewAction">
 						<s:param name="nextWeekNumber" value="3" />
-					</s:url>
-					<s:a href="%{url}">第4週</s:a></li>
+					</s:url> <s:a href="%{url}">第4週</s:a></li>
 			</ul>
 			<ul>
 
 				<li><s:url id="url" action="ReservationViewAction">
 						<s:param name="nextWeekNumber" value="nextWeekNumber + 1"></s:param>
-					</s:url>
-					<s:a href="%{url}">週を進む</s:a></li>
+					</s:url> <s:a href="%{url}">週を進む</s:a></li>
 			</ul>
 		</div>
 
@@ -145,9 +139,10 @@
 							<s:iterator value="reservationList1">
 								<li class="single-event"
 									data-start="<s:property value="reservationStart"/>"
-									data-end="<s:property value="reservationEnd"/>" data-content="info"
-									data-event="event-1"><a href="#0"> <em
-										class="event-name"><s:property value="reservationName" /></em>
+									data-end="<s:property value="reservationEnd"/>"
+									data-content="info" data-event="event-1"><a href="#0">
+										<em class="event-name"><s:property
+												value="reservationName" /></em>
 								</a></li>
 							</s:iterator>
 						</s:if>
@@ -165,14 +160,14 @@
 						<span><s:property value="viewDayList[1]" /></span>
 					</div>
 					<ul>
-							<s:iterator value="reservationList2">
-								<li class="single-event"
-									data-start="<s:property value="reservationStart"/>"
-									data-end="<s:property value="reservationEnd"/>" data-content="info"
-									data-event="event-1"><a href="#0"> <em
-										class="event-name"><s:property value="reservationName" /></em>
-								</a></li>
-							</s:iterator>
+						<s:iterator value="reservationList2">
+							<li class="single-event"
+								data-start="<s:property value="reservationStart"/>"
+								data-end="<s:property value="reservationEnd"/>"
+								data-content="info" data-event="event-1"><a href="#0">
+									<em class="event-name"><s:property value="reservationName" /></em>
+							</a></li>
+						</s:iterator>
 					</ul>
 				</li>
 
@@ -181,14 +176,14 @@
 						<span><s:property value="viewDayList[2]" /></span>
 					</div>
 					<ul>
-							<s:iterator value="reservationList3">
-								<li class="single-event"
-									data-start="<s:property value="reservationStart"/>"
-									data-end="<s:property value="reservationEnd"/>" data-content="info"
-									data-event="event-1"><a href="#0"><em
-										class="event-name"><s:property value="reservationName" /></em>
-								</a></li>
-							</s:iterator>
+						<s:iterator value="reservationList3">
+							<li class="single-event"
+								data-start="<s:property value="reservationStart"/>"
+								data-end="<s:property value="reservationEnd"/>"
+								data-content="info" data-event="event-1"><a href="#0"><em
+									class="event-name"><s:property value="reservationName" /></em>
+							</a></li>
+						</s:iterator>
 					</ul>
 				</li>
 
@@ -197,14 +192,15 @@
 						<span><s:property value="viewDayList[3]" /></span>
 					</div>
 					<ul>
-							<s:iterator value="reservationList4">
-								<li class="single-event"
-									data-start="<s:property value="reservationStart"/>"
-									data-end="<s:property value="reservationEnd"/>" data-content="info"
-									data-event="event-1"><a href="<s:url action="ReservationMoreDetailAction" />"> <em
-										class="event-name"><s:property value="reservationName" /></em>
-								</a></li>
-							</s:iterator>
+						<s:iterator value="reservationList4">
+							<li class="single-event"
+								data-start="<s:property value="reservationStart"/>"
+								data-end="<s:property value="reservationEnd"/>"
+								data-content="info" data-event="event-1"><a
+								href="<s:url action="ReservationMoreDetailAction" />"> <em
+									class="event-name"><s:property value="reservationName" /></em>
+							</a></li>
+						</s:iterator>
 					</ul>
 				</li>
 
@@ -213,14 +209,14 @@
 						<span><s:property value="viewDayList[4]" /></span>
 					</div>
 					<ul>
-							<s:iterator value="reservationList5">
-								<li class="single-event"
-									data-start="<s:property value="reservationStart"/>"
-									data-end="<s:property value="reservationEnd"/>" data-content="info"
-									data-event="event-1"><a href="#0"> <em
-										class="event-name"><s:property value="reservationName" /></em>
-								</a></li>
-							</s:iterator>
+						<s:iterator value="reservationList5">
+							<li class="single-event"
+								data-start="<s:property value="reservationStart"/>"
+								data-end="<s:property value="reservationEnd"/>"
+								data-content="info" data-event="event-1"><a href="#0">
+									<em class="event-name"><s:property value="reservationName" /></em>
+							</a></li>
+						</s:iterator>
 					</ul>
 				</li>
 
@@ -229,14 +225,14 @@
 						<span><s:property value="viewDayList[5]" /></span>
 					</div>
 					<ul>
-							<s:iterator value="reservationList6">
-								<li class="single-event"
-									data-start="<s:property value="reservationStart"/>"
-									data-end="<s:property value="reservationEnd"/>" data-content="info"
-									data-event="event-1"><a href="#0"> <em
-										class="event-name"><s:property value="reservationName" /></em>
-								</a></li>
-							</s:iterator>
+						<s:iterator value="reservationList6">
+							<li class="single-event"
+								data-start="<s:property value="reservationStart"/>"
+								data-end="<s:property value="reservationEnd"/>"
+								data-content="info" data-event="event-1"><a href="#0">
+									<em class="event-name"><s:property value="reservationName" /></em>
+							</a></li>
+						</s:iterator>
 					</ul>
 				</li>
 
@@ -245,14 +241,14 @@
 						<span><s:property value="viewDayList[6]" /></span>
 					</div>
 					<ul>
-							<s:iterator value="reservationList7">
-								<li class="single-event"
-									data-start="<s:property value="reservationStart"/>"
-									data-end="<s:property value="reservationEnd"/>" data-content="info"
-									data-event="event-1"><a href="#0"> <em
-										class="event-name"><s:property value="reservationName" /></em>
-								</a></li>
-							</s:iterator>
+						<s:iterator value="reservationList7">
+							<li class="single-event"
+								data-start="<s:property value="reservationStart"/>"
+								data-end="<s:property value="reservationEnd"/>"
+								data-content="info" data-event="event-1"><a href="#0">
+									<em class="event-name"><s:property value="reservationName" /></em>
+							</a></li>
+						</s:iterator>
 					</ul>
 				</li>
 			</ul>

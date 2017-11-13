@@ -27,7 +27,7 @@ public class MyPageDAO {
 		ArrayList<MyPageDTO> myPageDTO = new ArrayList<MyPageDTO>();
 	    
 
-		String sql = "SELECT * FROM reservation_info WHERE reservation_login_user =?";
+		String sql = "SELECT * FROM reservation_info WHERE reservation_login_user =? and reservation_date > now()";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, myPageId);

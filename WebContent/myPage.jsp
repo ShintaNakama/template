@@ -54,9 +54,10 @@
 	text-align: center;
 }
 
-#text-right {
+#deleteButton {
 	display: inline-block;
-	text-align: right;
+	text-align: center;
+	cursor: pointer;
 }
 </style>
 </head>
@@ -109,18 +110,19 @@
 				<s:property value="message" />
 			</h3>
 		</s:if>
-		<div id="text-right">
+		<div id="deleteButton">
 			<s:form action="MyPageAction">
 				<input type="hidden" name="deleteFlg" value="1">
-				<s:submit value="削除" method="delete" />
+				<s:submit value="予約削除" method="delete" />
 			</s:form>
+		</div>
 			<p>
 				トップへ戻る場合は<a href='<s:url action="GoTopAction" />'>こちら</a>
 			</p>
 			<p>
 				ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a>
 			</p>
-		</div>
+		
 
 	</div>
 </body>
