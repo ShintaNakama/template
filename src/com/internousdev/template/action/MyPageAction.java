@@ -43,10 +43,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
      * マイページ予約情報格納リスト
      */
 	public ArrayList<MyPageDTO> myPageReservationList = new ArrayList<MyPageDTO>();
-	/**
-	 * 削除フラグ
-	 */
-	public String deleteFlg;
+	
 
 	/**
 	 * 処理結果
@@ -100,15 +97,6 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		this.userName = userName;
 	}
 
-
-
-	public String getDeleteFlg() {
-		return deleteFlg;
-	}
-
-	public void setDeleteFlg(String deleteFlg) {
-		this.deleteFlg = deleteFlg;
-	}
 
 	@Override
 	public void setSession(Map<String, Object> loginSessionMap) {

@@ -100,7 +100,7 @@
 							<td><s:property value="reservationDay" /></td>
 							<td><s:property value="reservationStart" /></td>
 							<td><s:property value="reservationEnd" /></td>
-							<td><input type="submit" style="cursor:pointer" name="deleteFlg" value="予約削除" ><input type="hidden" name="deleteFlg" value="1"></td>
+							<td><input type="submit" style="cursor:pointer" name="deleteFlg" value="予約削除" ><input type="hidden" name="deleteFlg" value="1"><input type="hidden" name="deleteReservationNumber" value="reservationNumber"></td>
 						</tr>
 					</s:iterator>
 				</table>
