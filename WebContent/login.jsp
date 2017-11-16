@@ -13,7 +13,7 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 
-<link rel="stylesheet" href="./css/login.css" type="text/css">
+<link rel="stylesheet" href="./css/login2.css" type="text/css">
 
 <meta charset="utf-8">
 <title>Login画面</title>
@@ -36,7 +36,7 @@
 						<input type="text" name="loginUserId" placeholder="loginUserId">
 						<input type="password" name="loginPassword"
 							placeholder="loginPassword">
-						<button class="login" type="submit">LOGIN</button>
+						<button class="login" type="submit" value="login">LOGIN</button>
 					</s:form>
 				</div>
 			</div>
